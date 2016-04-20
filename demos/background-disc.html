@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Background | Disc</title>
+  <style>
+    html, body {
+      height: 100%;
+    }
+    body {
+      display: flex;
+      flex-flow: column;
+    }
+
+    .container {
+      margin: auto;
+      width: 1000px;
+      height: 500px;
+      outline: 1px solid red;
+    }
+
+    .demo {
+      background: radial-gradient(circle, purple 100px, cornflowerblue 0),
+                  radial-gradient(circle, cornflowerblue 30%, purple 0);
+      background-repeat: no-repeat;
+      background-size: 500px 500px;
+      background-position: 0 0, 500px 0;
+    }
+
+    .animated {
+      transition: background-position .2s, background-position 1s;
+      background-size: 1000px 500px;
+      background-position: calc(-500px * 1.2) 0, calc(500px * 1.2) 100%;
+      cursor: pointer;
+      background-blend-mode: darken;
+    }
+
+    .animated:hover{
+      background-position: 50% 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container demo"></div>
+  <div class="container demo animated"></div>
+</body>
+</html>

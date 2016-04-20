@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Background | Bubbles</title>
+  <style>
+    html, body {
+      height: 100%;
+    }
+    body {
+      display: flex;
+      flex-flow: column;
+    }
+
+    .container {
+      margin: auto;
+      width: 1000px;
+      height: 500px;
+      outline: 1px solid red;
+    }
+
+    :root {
+      --contrast: transparent;
+    }
+
+    .demo {
+      background: /* bubble #1 */
+                  radial-gradient(circle, cornflowerblue 50px, var(--contrast) 0),
+                  /* bubble #2 */
+                  radial-gradient(circle, cornflowerblue 100px, var(--contrast) 0),
+                  /* bubble #3 */
+                  radial-gradient(circle, cornflowerblue 50px, var(--contrast) 0),
+                  /* bubble #4 */
+                  radial-gradient(circle, cornflowerblue 25px, var(--contrast) 0),
+                  /* bubble #5 */
+                  radial-gradient(circle, cornflowerblue 25px, var(--contrast) 0),
+                  /* backdrop */
+                  linear-gradient(purple, purple);
+
+      background-repeat: no-repeat;
+
+      background-size: /* bubble #1 */
+                       100px 100px,
+                       /* bubble #2 */
+                       200px 200px,
+                       /* bubble #3 */
+                       100px 100px,
+                       /* bubble #4 */
+                       100px 100px,
+                       /* bubble #5 */
+                       100px 100px,
+                       /* backdrop */
+                       100% 100%;
+
+      background-position: 50px 50px,
+                           150px 150px,
+                           400px 150px,
+                           450px 250px,
+                           150px 0px,
+                           0 0; /* backdrop */
+    }
+
+    .animated {
+      transition: background-position .2s, background-position 1s;
+      background-size: 1000px 500px;
+      background-position: calc(-500px * 1.2) 0, calc(500px * 1.2) 100%;
+      cursor: pointer;
+      background-blend-mode: darken;
+    }
+
+    .animated:hover{
+      background-position: 50% 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container demo"></div>
+  <!-- <div class="container demo animated"></div> -->
+</body>
+</html>
