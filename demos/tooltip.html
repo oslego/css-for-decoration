@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tooltip</title>
+  <style>
+    html, body {
+      height: 100%;
+    }
+    body {
+      display: flex;
+      flex-flow: column;
+    }
+
+    .tooltip {
+      margin: auto;
+      color: white;
+      padding: 20px 20px 40px 20px; /* creates 40px space below for triangle */
+
+      background-image: linear-gradient(purple 100%, transparent 0),
+                        linear-gradient(.625turn, purple 50%, transparent 0),
+                        linear-gradient(.375turn, purple 50%, transparent 0);
+
+      background-repeat: no-repeat;
+
+      background-size: 100% calc(100% - 20px), /* moves backdrop up to allow for triangle to be visible */
+                       20px 20px,
+                       20px 20px;
+
+      background-position: 0 0,
+                           calc(50% - 20px / 2) 100%, /* left half of triangle */
+                           calc(50% + 20px / 2) 100%; /* right half of triangle */
+    }
+
+  </style>
+</head>
+<body>
+  <div class="tooltip">This is a tooltip</div>
+</body>
+</html>
