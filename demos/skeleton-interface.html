@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Skeleton Interface</title>
+  <style>
+    html, body {
+      height: 100%;
+    }
+    body {
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      align-items: center;
+      font-family: helvetica;
+    }
+
+    .container {
+      margin-top: 5em;
+      width: 500px;
+      height: 140px;
+    }
+
+    :root {
+      --disc: radial-gradient(circle, lightgray 50px, transparent 0);
+      --line: linear-gradient(lightgray 100%, transparent 0);
+    }
+
+    .demo {
+      background: var(--disc),
+                  linear-gradient(.3turn, rgba(255,255,255,0) 20%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0) 80%),
+                  var(--line),
+                  var(--line),
+                  var(--line),
+                  var(--line);
+
+      background-repeat: no-repeat;
+
+      background-size: 100px 100px, /* disc */
+                       50px 140px,  /* highlight */
+                       150px 20px,
+                       350px 20px,
+                       300px 20px,
+                       250px 20px;
+
+      background-position: 0 0, /* disc */
+                           0 0, /* highlight */
+                           120px 0,
+                           120px 40px,
+                           120px 80px,
+                           120px 120px;
+    }
+
+    .animated {
+      animation: fadein 1s, highlight 1s 1s infinite;
+      /*animation: highlight 1s infinite;*/
+    }
+
+    @keyframes fadein {
+      from { opacity: 0 }
+      to { opacity: 1 }
+    }
+
+    /*
+      TODO: figure out how to inherit background-position.
+      TODO: log issue with Chrome for distributing bg-position evenly to all bg-images when not 1:1 matching.
+    */
+    @keyframes highlight {
+      100% {
+        background-position: 0 0,     /* disc */
+                             500px 0, /* highlight */
+                             120px 0,
+                             120px 40px,
+                             120px 80px,
+                             120px 120px;
+      }
+    }
+
+
+  </style>
+</head>
+<body>
+  <h1>Skeleton interfaces</h1>
+  <div class="container demo animated"></div>
+  <div class="container demo animated"></div>
+</body>
+</html>
