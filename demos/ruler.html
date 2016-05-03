@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ruler</title>
+  <style>
+    html, body {
+      height: 100%;
+    }
+    body {
+      display: flex;
+      flex-flow: column;
+    }
+
+    .container {
+      width: 100vw;
+      height: 30px;
+      /*outline: 1px solid red;*/
+    }
+
+    .demo {
+      background-image: linear-gradient(90deg, black 1px, transparent 0),
+                        linear-gradient(90deg, red 1px, transparent 0);
+      background-position: 0 0;
+      background-repeat: repeat-x;
+      background-size: 100px 100%,
+                       10px 50%;
+    }
+
+    .vertical {
+      /*outline: 1px solid red;*/
+      width: 30px;
+      height: 80vh;
+      padding-left: 10px;
+      border-left: 10px solid rgba(255, 255, 0, 0.75);
+
+      background-image: repeating-linear-gradient(180deg, black 1px, transparent 2px, transparent 100px),
+                        repeating-linear-gradient(180deg, red 1px, transparent 2px, transparent 10px);
+
+      background-repeat: no-repeat;
+      background-origin: padding-box;
+
+      background-position: 0 20px; /* vertical offset to clear horizontal background */
+
+      background-size: 100% 100%,
+                       50% 100%;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container demo"></div>
+  <div class="container vertical"></div>
+</body>
+</html>
