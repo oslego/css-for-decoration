@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ruler</title>
+  <style>
+    html, body {
+      height: 100%;
+    }
+    body {
+      display: flex;
+      flex-flow: column;
+    }
+
+    .container {
+      width: 100vw;
+      height: 30px;
+      /*outline: 1px solid red;*/
+    }
+
+    .demo {
+      background-image: linear-gradient(90deg, black 1px, transparent 0),
+                        linear-gradient(90deg, red 1px, transparent 0);
+      background-position: 0 0;
+      background-repeat: repeat-x;
+      background-size: 100px 100%,
+                       10px 50%;
+    }
+
+    /* TODO log bug with sub-pixel rendering on Chrome */
+    .repeating {
+      background-image: repeating-linear-gradient(90deg, black 0px, black 1px, transparent 0, transparent 100px),
+                        repeating-linear-gradient(90deg, red 0px, red 1px, transparent 0, transparent 10px);
+      background-position: 0 0;
+      background-repeat: repeat-x;
+      background-size: 100px 100%,
+                       10px 50%;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container demo"></div>
+  <div class="container repeating"></div>
+</body>
+</html>
