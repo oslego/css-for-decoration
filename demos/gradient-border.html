@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gradient Border</title>
+  <style>
+    html, body {
+      height: 100%;
+    }
+    body {
+      display: flex;
+      flex-flow: column;
+    }
+
+    .container {
+      margin: auto;
+      width: 40vw;
+      height: 40vh;
+      /*outline: 1px solid red;*/
+      border: 20px solid transparent;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .demo {
+      background-image:
+        linear-gradient(white, white),
+        linear-gradient(180deg, cornflowerblue, purple);
+
+      background-repeat: no-repeat;
+      background-origin: padding-box, border-box;
+    }
+
+    .animated {
+      background-image:
+        linear-gradient(white, white),
+        linear-gradient(180deg, cornflowerblue, purple 50%, cornflowerblue);
+
+      background-repeat: no-repeat;
+      background-size: 100% 100%, 100% 200%;
+      background-position: 0 0, 0 100%;
+      background-origin: padding-box, border-box;
+      animation: highlight 1s infinite alternate;
+    }
+
+    @keyframes highlight {
+      100% {
+        background-position: 0 0, 0 0;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container demo"> Gradient border goes around me. </div>
+  <div class="container demo animated"> ANIMATED Gradient border goes around me. </div>
+</body>
+</html>
