@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Background | Blurred</title>
+  <style>
+    html, body {
+      height: 100%;
+    }
+    body {
+      display: flex;
+      flex-flow: column;
+    }
+
+    .container {
+      margin: auto;
+      width: 40vw;
+      height: 40vh;
+      outline: 1px solid red;
+    }
+
+    .demo {
+      background-image: linear-gradient(cornflowerblue, cornflowerblue),
+                        linear-gradient(purple, purple),
+                        linear-gradient(pink, pink),
+                        linear-gradient(red, red);
+
+      background-size: 50% 50%;
+      background-repeat: no-repeat;
+      background-position: 0 0, 100% 100%, 0 100%, 100% 0;
+
+      -webkit-filter: blur(100px);
+      filter: blur(200px);
+    }
+
+
+  </style>
+</head>
+<body>
+  <div class="container demo"></div>
+</body>
+</html>
