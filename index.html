@@ -4,7 +4,9 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>CSS for Decoration</title>
+		<meta name="description" content="Practical use cases for CSS Gradients, multi-background, and CSS Blend Modes">
+		<meta name="author" content="Razvan Caliman">
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/black.css">
@@ -13,19 +15,197 @@
 		<link rel="stylesheet" href="lib/css/zenburn.css">
 
 		<!-- Printing and PDF exports -->
-		<script>
+		<!-- <script>
 			var link = document.createElement( 'link' );
 			link.rel = 'stylesheet';
 			link.type = 'text/css';
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
+		</script> -->
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section>
+					<h1>CSS for Decoration</h1>
+				</section>
+
+				<section>
+					<h1>Bio</h1>
+				</section>
+
+				<section>
+					<h2>"X" done only in HTML & CSS</h2>
+				</section>
+
+				<section>
+					<h2>CSS features for decoration</h2>
+					<h2 class="tags">
+						<span>CSS Gradients</span>, <span>multi-backgrounds</span>, <span>box-shadow</span>, <span>text-shadow</span>, <span>CSS Filters</span>, <span>CSS Blend Modes</span>, <span>CSS Masking</span>
+					</h2>
+				</section>
+
+				<section>
+					<h2>Agenda</h2>
+					<ul>
+						<li>Complex gradient backgrounds</li>
+						<li>Skeleton interfaces</li>
+						<li>Tool UI components</li>
+						<li>Spotify album covers</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>CSS Gradients</h1>
+				</section>
+
+				<section>
+					<p>[INTERACTIVE BG + CODE]</p>
+					<h2>linear-gradient</h2>
+				</section>
+
+				<section>
+					<p>INTERACTIVE BG + CODE</p>
+					<h2>radial-gradient</h2>
+				</section>
+
+				<section>
+					<blockquote>For the browser, CSS gradients are images not colors.</blockquote>
+				</section>
+
+				<section>
+					<p>background-size</p>
+					<p>background-position</p>
+					<p>background-repeat</p>
+					<p>background-origin</p>
+					<p>background-clip</p>
+				</section>
+
+				<section>
+					<h2>Multiple background declarations</h2>
+					<p>"Layers"</p>
+				</section>
+
+				<section>
+					[3D LAYERS ILLUSTRATION]
+				</section>
+
+				<section>
+					<h2>Use cases</h2>
+					<p>Splash of screenshots</p>
+				</section>
+
+				<section>
+					<h2>DEMO FastCo</h2>
+				</section>
+
+				<section>
+					<h2>DEMO Stripe Atlas</h2>
+				</section>
+
+				<section>
+					<h2>Swiss in CSS</h2>
+				</section>
+
+				<section>
+					<h2>Italian Tricolore</h2>
+				</section>
+
+				<section>
+					<h1>Gradient borders</h1>
+				</section>
+
+				<section>
+					<h2>INTERACTIVE gradient border</h2>
+				</section>
+
+				<section>
+					<h2>DEMO JPEG image border</h2>
+				</section>
+
+				<section>
+					<h1>Skeleton Interfaces</h1>
+				</section>
+
+				<section>
+					<p>Splash screenshots: Medium, Facebook</p>
+				</section>
+
+				<section>
+					<p>DEMO Medium skeleton interface</p>
+					<p>Divide code progression over multiple slides?</p>
+				</section>
+
+				<section>
+					<h3>Skeleton UI pros with CSS Gradients</h3>
+					<ul>
+						<li>performance++</li>
+						<li>No assets to download</li>
+						<li>No uneccesary HTML</li>
+						<li>No JS</li>
+						<li>trick with :empty selector</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Tool UI decoration</h1>
+				</section>
+
+				<section>
+					<h2>Rulers</h2>
+					<p>INTERACTIVE ruler demo: repeating-linear-gradients</p>
+				</section>
+
+				<section>
+					<h2>Range input</h2>
+					<p>Incremental code with slides</p>
+				</section>
+
+				<section>
+					<h2>wizzard input</h2>
+				</section>
+
+				<section>
+					<h2>@thebabydino</h2>
+					<p>Ana Tudor's sliders</p>
+				</section>
+
+				<section>
+					<h2>CSS Blend Modes</h2>
+				</section>
+
+				<section>
+					split-screen comparison with simple alpha
+				</section>
+
+				<section>
+					Octoshirt DEMO
+				</section>
+
+				<section>
+					Spotify Discover album covers
+				</section>
+
+				<section>
+					<h2>@una</h2>
+					<p>Una Kravets CSS Gram</p>
+				</section>
+
+				<section>
+					<h2>@LeaVerou</h2>
+					<p>CSS Secrets Book</p>
+				</section>
+
+				<section>
+					<h1>Outro</h1>
+					<ul>
+						<li>powerful features</li>
+						<li>complex to use</li>
+						<li>specialized tooling required; DevTools</li>
+						<li>not an excuse to avoid SVG</li>
+					</ul>
+				</section>
+
 			</div>
 		</div>
 
@@ -35,12 +215,15 @@
 		<script>
 			// More info https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
+				controls: false,
+				progress: true,
 				history: true,
+				center: true,
+
+				transition: 'fade', // none/fade/slide/convex/concave/zoom
 
 				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
 					{ src: 'plugin/notes/notes.js', async: true },
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
 				]
