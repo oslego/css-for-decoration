@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Background | Decoration</title>
+  <style>
+  html, body {
+    height: 100%;
+  }
+  body {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+
+    --lightblue: #aad0e5;
+    --lightpink: #fdbfbe;
+  }
+  .container{
+    width: 60em;
+    height: 30em;
+    margin: 1em;
+    background-color: var(--lightblue);
+  }
+
+  .stripped-disc {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .stripped-disc::before {
+    border-radius: 10em;
+    content: " ";
+    position: absolute;
+    top: -5em;
+    left: -5em;
+    width: 20em;
+    height: 20em;
+    background-image: repeating-linear-gradient(25deg, var(--lightpink), var(--lightpink) 1em, transparent 0, transparent 1.5em);
+    background-repeat: no-repeat;
+  }
+
+  .dotted-square {
+    box-sizing: border-box;
+    padding: 10em;
+    background-image: radial-gradient(circle 20px at 10px 10px, white 0, white 10px, transparent 11px, transparent 15px);
+    background-size: 40px 40px;
+    background-position: 50% 50%;
+    background-origin: border-box, padding-box;
+  }
+
+  </style>
+</head>
+<body>
+  <div class="container stripped-disc dotted-square"></div>
+</body>
+</html>
