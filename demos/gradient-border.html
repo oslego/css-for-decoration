@@ -18,14 +18,23 @@
       height: 40vh;
       /*outline: 1px solid red;*/
       border: 20px solid transparent;
-      padding: 20px;
       box-sizing: border-box;
+      text-transform: uppercase;
+      font-weight: 900;
+      font-family: "helvetica neue";
+      font-size: 4em;
+      letter-spacing: -2px;
+      padding: 1rem;
     }
 
     .demo {
+      /*background-image:
+        linear-gradient(white, white),
+        linear-gradient(180deg, cornflowerblue, purple);*/
+
       background-image:
         linear-gradient(white, white),
-        linear-gradient(180deg, cornflowerblue, purple);
+        linear-gradient(270deg, #00D7B9, #B95DD7 50%, #FFB367 100%);
 
       background-repeat: no-repeat;
       background-origin: padding-box, border-box;
@@ -52,7 +61,7 @@
   </style>
 </head>
 <body>
-  <div class="container demo"> Gradient border goes around me. </div>
+  <div class="container demo"> Gradient border </div>
   <div class="container demo animated"> ANIMATED Gradient border goes around me. </div>
 </body>
 </html>
