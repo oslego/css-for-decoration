@@ -28,10 +28,33 @@
 			<div class="slides">
 				<section>
 					<h1>CSS for Decoration</h1>
+
+<style id="demo1">
+/* Some example CSS */
+#target {
+	background: red;
+	width: 400px;
+	height: 400px;
+}
+</style>
+					<div id="target"></div>
+					<div class="editor-container" data-source="#demo1"></div>
+
 				</section>
 
 				<section>
 					<h1>Bio</h1>
+<style id="demo2">
+/* Some example CSS */
+#target2 {
+	background: cornflowerblue;
+	width: 200px;
+	height: 200px;
+}
+</style>
+						<div id="target2"></div>
+						<div class="editor-container" data-source="#demo2"></div>
+
 				</section>
 
 				<section>
@@ -215,13 +238,90 @@
 					</ul>
 				</section>
 
+				<section>
+					<h2>Credits</h2>
+					<p>Reveal.js: https://github.com/hakimel/reveal.js/</p>
+					<p>CodeMirror: https://github.com/codemirror/CodeMirror</p>
+					<p>Emmet for CodeMirror: https://github.com/emmetio/codemirror</p>
+				</section>
+
 			</div>
 		</div>
 
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
 
+		<script src="codemirror/codemirror.js"></script>
+		<script src="codemirror/mode/xml/xml.js"></script>
+		<script src="codemirror/mode/css/css.js"></script>
+		<script src="codemirror/mode/htmlmixed/htmlmixed.js"></script>
+		<script src="codemirror/emmet.js"></script>
+
+		<link rel="stylesheet" href="codemirror/codemirror.css">
+		<link rel="stylesheet" href="codemirror/dracula.css">
+
 		<script>
+			// Global ref to CodeMirror editor
+			var editor;
+			var emmetKeyOptions = {
+				// 'Cmd-E': 'emmet.expand_abbreviation',
+				// 'Tab': 'emmet.expand_abbreviation_with_tab',
+				'Cmd-D': 'emmet.balance_outward',
+				'Shift-Cmd-D': 'emmet.balance_inward',
+				'Cmd-M': 'emmet.matching_pair',
+				'Shift-Cmd-A': 'emmet.wrap_with_abbreviation',
+				'Ctrl-Alt-Right': 'emmet.next_edit_point',
+				'Ctrl-Alt-Left': 'emmet.prev_edit_point',
+				'Cmd-L': 'emmet.select_line',
+				'Cmd-Shift-M': 'emmet.merge_lines',
+				'Cmd-/': 'emmet.toggle_comment',
+				'Cmd-J': 'emmet.split_join_tag',
+				'Cmd-K': 'emmet.remove_tag',
+				'Shift-Cmd-Y': 'emmet.evaluate_math_expression',
+
+				'Alt-Up': 'emmet.increment_number_by_1',
+				'Alt-Down': 'emmet.decrement_number_by_1',
+				'Shift-Alt-Up': 'emmet.increment_number_by_10',
+				'Shift-Alt-Down': 'emmet.decrement_number_by_10',
+
+				'Shift-Cmd-.': 'emmet.select_next_item',
+				'Shift-Cmd-,': 'emmet.select_previous_item',
+				'Cmd-B': 'emmet.reflect_css_value',
+
+				'Enter': 'emmet.insert_formatted_line_break_only'
+			};
+
+			function toggleEditorsOnSlideChange(event) {
+				var prev = event.previousSlide;
+				var current = event.currentSlide;
+
+				// Clear editor from prev slide
+				if (editor && prev) {
+					prev.querySelector('.CodeMirror').remove();
+					editor = undefined;
+				}
+
+				var editorContainer = current.querySelector('.editor-container');
+				var sourceElement = editorContainer && document.querySelector(editorContainer.dataset.source);
+
+				if (editorContainer && sourceElement) {
+					editor = CodeMirror(editorContainer, {
+						value: sourceElement.textContent,
+						mode: 'css',
+						theme: 'dracula',
+						profile: 'xhtml'
+					});
+
+					editor.on('change', function(instance, changeObj) {
+						sourceElement.innerHTML = instance.getValue()
+					});
+
+					emmetCodeMirror(editor, emmetKeyOptions);
+				}
+			}
+
+			Reveal.addEventListener('slidechanged', toggleEditorsOnSlideChange);
+
 			// More info https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
 				controls: false,
@@ -236,10 +336,10 @@
 
 				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+					{ src: 'plugin/notes/notes.js', async: true }
 				]
 			});
 		</script>
+
 	</body>
 </html>
