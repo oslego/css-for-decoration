@@ -1,0 +1,132 @@
+/**
+ * Black theme for reveal.js. This is the opposite of the 'white' theme.
+ *
+ * By Hakim El Hattab, http://hakim.se
+ */
+
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+
+// Include theme-specific fonts
+@import url(../../lib/font/source-sans-pro/source-sans-pro.css);
+
+
+// Override theme settings (see ../template/settings.scss)
+$backgroundColor: #222;
+
+$mainColor: #fff;
+$headingColor: #fff;
+
+$mainFontSize: 38px;
+$mainFont: 'Source Sans Pro', Helvetica, sans-serif;
+$headingFont: 'Source Sans Pro', Helvetica, sans-serif;
+$headingTextShadow: none;
+$headingLetterSpacing: normal;
+$headingTextTransform: uppercase;
+$headingFontWeight: 600;
+$linkColor: #42affa;
+$linkColorHover: lighten( $linkColor, 15% );
+$selectionBackgroundColor: lighten( $linkColor, 25% );
+
+$heading1Size: 2.5em;
+$heading2Size: 1.6em;
+$heading3Size: 1.3em;
+$heading4Size: 1.0em;
+
+section.has-light-background {
+	&, h1, h2, h3, h4, h5, h6 {
+		color: #222;
+	}
+}
+
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
+
+
+.flex-layout--row {
+	display: flex;
+	height: 100%;
+
+	.cell {
+		width: auto;
+		flex: 1 0 auto;
+		outline: 1px solid lime;
+	}
+
+	.cell--half {
+		max-width: 50%;
+	}
+
+	.cell--third {
+		max-width: 33%;
+	}
+
+	.cell--quarter {
+		max-width: 25%;
+	}
+
+	.cell--fifth {
+		max-width: 20%;
+	}
+
+	.cell--tenth {
+		max-width: 10%;
+	}
+
+}
+
+.flex-layout--column {
+	display: flex;
+	height: 100%;
+	flex-flow: column nowrap;
+
+	.cell {
+		height: auto;
+		flex: 1 0 auto;
+		outline: 1px solid lime;
+	}
+
+	.cell--half {
+		max-height: 50%;
+	}
+
+	.cell--third {
+		max-height: 33%;
+	}
+
+	.cell--quarter {
+		max-height: 25%;
+	}
+
+	.cell--fifth {
+		max-height: 20%;
+	}
+
+	.cell--tenth {
+		max-height: 10%;
+	}
+}
+
+
+.flex-layout--row,
+.flex-layout--column{
+
+	/* Utility classes */
+	.u-center{
+		margin: auto !important;
+	}
+
+	.u-bottom-left {
+		margin: auto auto 2em 2em !important;
+	}
+
+	.u-bottom-right {
+		margin: auto 2em 2em auto !important;
+	}
+}

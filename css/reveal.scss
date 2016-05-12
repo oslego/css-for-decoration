@@ -414,7 +414,8 @@ html:-moz-full-screen-ancestor {
 	display: none;
 	position: absolute;
 	width: 100%;
-	padding: 20px 0px;
+	height: 100%;
+	padding: 0px;
 
 	z-index: 10;
 	transform-style: preserve-3d;
