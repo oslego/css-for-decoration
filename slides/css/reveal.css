@@ -345,7 +345,8 @@ html:-moz-full-screen-ancestor {
   display: none;
   position: absolute;
   width: 100%;
-  padding: 20px 0px;
+  height: 100%;
+  padding: 0px;
   z-index: 10;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
@@ -1149,7 +1150,6 @@ html:-moz-full-screen-ancestor {
 .reveal .overlay .viewport {
   position: absolute;
   display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   top: 40px;
