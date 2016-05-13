@@ -13,6 +13,7 @@
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,600italic,800|Source+Code+Pro:400,600' rel='stylesheet' type='text/css'>
 
 		<!-- Printing and PDF exports -->
 		<!-- <script>
@@ -28,33 +29,24 @@
 			<div class="slides">
 				<section>
 					<h1>CSS for Decoration</h1>
-
-<style id="demo1">
-/* Some example CSS */
-#target {
-	background: red;
-	width: 400px;
-	height: 400px;
-}
-</style>
-					<div id="target"></div>
-					<div class="editor-container" data-source="#demo1"></div>
-
 				</section>
 
 				<section>
-					<h1>Bio</h1>
-<style id="demo2">
-/* Some example CSS */
-#target2 {
-	background: cornflowerblue;
-	width: 200px;
-	height: 200px;
-}
-</style>
-						<div id="target2"></div>
-						<div class="editor-container" data-source="#demo2"></div>
+					<h2>Bio</h2>
+				</section>
 
+				<section>
+					<h2>Code sample</h2>
+					<style id="demo-num">
+					/* Some example CSS */
+					#target {
+						background: red;
+						width: 400px;
+						height: 400px;
+					}
+					</style>
+					<div id="target"></div>
+					<div class="editor-container" data-source="#demo-num"></div>
 				</section>
 
 				<section>
@@ -73,25 +65,51 @@
 
 				<section>
 					<div class="flex-layout--row">
-						<h1 class="u-center">Center</h1>
+						<h2 class="u-center">"X" with CSS only</h2>
+					</div>
+				</section>
+
+				<section>
+					<p>Where it all started</p>
+					<p>
+						http://stackoverflow.com/questions/30682806/css-is-it-possible-to-achieve-this-without-an-image/30735109#30735109
+					</p>
+				</section>
+
+				<section>
+					<p>Where it all started</p>
+					<p>
+						http://stackoverflow.com/questions/30682806/css-is-it-possible-to-achieve-this-without-an-image/30735109#30735109
+					</p>
+				</section>
+
+				<section>
+					<p>condescending lemon in CSS</p>
+					<p>http://stackoverflow.com/questions/27874354/lemon-shape-css-and-html</p>
+				</section>
+
+				<section>
+					<div class="flex-layout--row">
+						<h1 class="u-center">asinglediv.com</h1>
 					</div>
 				</section>
 
 				<section>
 					<div class="flex-layout--row">
-						<h1 class="u-bottom-left">BOTTOM LEFT</h1>
+						<div class="u-center">
+							<h2>CSS features for decoration</h2>
+							<ul class="list list--2col  |  fragment fragment--trigger-highlight  |  u-opacity1">
+								<li class="highlight">CSS Gradients</li>
+								<li>CSS Filters</li>
+								<li class="highlight">CSS Blend Modes</li>
+								<li>CSS Masking</li>
+								<li class="highlight">backgrounds</li>
+								<li>box-shadow</li>
+								<li>text-shadow</li>
+								<li>borders</li>
+							</ul>
+						</div>
 					</div>
-				</section>
-
-				<section>
-					<h2>"X" done only in HTML & CSS</h2>
-				</section>
-
-				<section>
-					<h2>CSS features for decoration</h2>
-					<h2 class="tags">
-						<span>CSS Gradients</span>, <span>multi-backgrounds</span>, <span>box-shadow</span>, <span>text-shadow</span>, <span>CSS Filters</span>, <span>CSS Blend Modes</span>, <span>CSS Masking</span>
-					</h2>
 				</section>
 
 				<section>
@@ -105,13 +123,29 @@
 					</ul>
 				</section>
 
-				<section>
-					<h1>CSS Gradients</h1>
+				<section data-state="bg-gradient-intro">
+					<div class="flex-layout--row">
+						<h1 class="u-center">CSS Gradients</h1>
+					</div>
 				</section>
 
 				<section>
-					<p>[INTERACTIVE BG + CODE]</p>
-					<h2>linear-gradient</h2>
+					<section>
+						<div class="flex-layout--column">
+
+							<div class="cell" id="demo-1">
+<style id="demo1">
+	/* CSS linear gradient */
+	#demo-1 {
+		background-image: linear-gradient( 90deg, yellow 0%, purple 100% );
+	}
+</style>
+							</div>
+							<div class="cell cell--third | editor-container" data-source="#demo1">
+							</div>
+
+						</div>
+					</section>
 				</section>
 
 				<section>
@@ -120,15 +154,28 @@
 				</section>
 
 				<section>
-					<blockquote>For the browser, CSS gradients are images not colors.</blockquote>
+					<div class="flex-layout--row">
+						<h2 class="u-top-right u-width-half u-align-right | fragment fragment--trigger-highlight | u-opacity1">
+							CSS gradients are <span class="highlight">images<span>, not colors.
+						</h2>
+					</div>
 				</section>
 
 				<section>
-					<p>background-size</p>
-					<p>background-position</p>
-					<p>background-repeat</p>
-					<p>background-origin</p>
-					<p>background-clip</p>
+					<div class="flex-layout--row">
+						<div class="u-center">
+							<h2>CSS Background Properties</h2>
+							<ul class="list list--2col list--code | fragment fragment--trigger-highlight | u-opacity1">
+								<li class="highlight">background-image</li>
+								<li class="highlight">background-size</li>
+								<li>background-clip</li>
+								<li class="highlight">background-position</li>
+								<li class="highlight">background-repeat</li>
+								<li>background-attachment</li>
+								<li class="highlight">background-origin</li>
+							</ul>
+						</div>
+					</div>
 				</section>
 
 				<section>
@@ -142,7 +189,21 @@
 
 				<section>
 					<h2>Use cases</h2>
-					<p>Splash of screenshots</p>
+					<p>Use next slide's  blurry bg</p>
+				</section>
+
+				<section data-background="./resources/AdobeStock_75728401_WM.jpeg">
+					<div class="flex-layout--row">
+						<h2 class="u-top-right u-align-right">
+							If all you have is a hammer, <br>everything looks like a nail.
+							<small><br>-- Abraham Maslow</small>
+						</h2>
+					</div>
+
+				</section>
+
+				<section>
+					<p>Splash: screenshots from behance</p>
 				</section>
 
 				<section>
@@ -203,11 +264,7 @@
 				</section>
 
 				<section>
-					<h2>Italian Tricolore</h2>
-				</section>
-
-				<section>
-					<h2>Quite border decorations</h2>
+					<h2>Italian Tricolore | The Verge</h2>
 				</section>
 
 				<section>
