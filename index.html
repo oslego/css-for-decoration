@@ -130,33 +130,42 @@
 				</section>
 
 				<section>
-					<section>
-						<div class="flex-layout--column">
+					<div class="flex-layout--column">
 
-							<div class="cell" id="demo-1">
-<style id="demo1">
+						<div class="cell" id="demo-1">
+<style id="source-demo-1">
 	/* CSS linear gradient */
 	#demo-1 {
 		background-image: linear-gradient( 90deg, yellow 0%, purple 100% );
 	}
 </style>
-							</div>
-							<div class="cell cell--third | editor-container" data-source="#demo1">
-							</div>
-
 						</div>
-					</section>
+						<div class="cell cell--third | editor-container" data-source="#source-demo-1">
+						</div>
+
+					</div>
 				</section>
 
 				<section>
-					<p>INTERACTIVE BG + CODE</p>
-					<h2>radial-gradient</h2>
+					<div class="flex-layout--column">
+						<div class="cell" id="demo-2">
+<style id="source-demo-2">
+	/* CSS radial gradient */
+	#demo-2 {
+		background-image: radial-gradient( circle, yellow 0%, purple 100% );
+	}
+</style>
+						</div>
+						<div class="cell cell--third | editor-container" data-source="#source-demo-2">
+						</div>
+
+					</div>
 				</section>
 
 				<section>
 					<div class="flex-layout--row">
 						<h2 class="u-top-right u-width-half u-align-right | fragment fragment--trigger-highlight | u-opacity1">
-							CSS gradients are <span class="highlight">images<span>, not colors.
+							CSS gradients are <span class="highlight">images</span>, not colors.
 						</h2>
 					</div>
 				</section>
@@ -377,16 +386,19 @@
 			function toggleEditorsOnSlideChange(event) {
 				var prev = event.previousSlide;
 				var current = event.currentSlide;
+				var editorContainer, sourceElement;
 
-				// Clear editor from prev slide
+				// Clear editor from previous slide.
 				if (editor && prev) {
+					// Remove DOM and dereference editor instance. CodeMirror cleans-up after itself.
 					prev.querySelector('.CodeMirror').remove();
 					editor = undefined;
 				}
 
-				var editorContainer = current.querySelector('.editor-container');
-				var sourceElement = editorContainer && document.querySelector(editorContainer.dataset.source);
+				editorContainer = current.querySelector('.editor-container');
+				sourceElement = editorContainer && document.querySelector(editorContainer.dataset.source);
 
+				// Enable CodeMirror editor for stylesheet source, if any.
 				if (editorContainer && sourceElement) {
 					editor = CodeMirror(editorContainer, {
 						value: sourceElement.textContent,
@@ -396,9 +408,10 @@
 					});
 
 					editor.on('change', function(instance, changeObj) {
-						sourceElement.innerHTML = instance.getValue()
+						sourceElement.innerHTML = instance.getValue();
 					});
 
+					// Enable Emmet keyboard shortcuts.
 					emmetCodeMirror(editor, emmetKeyOptions);
 				}
 			}
