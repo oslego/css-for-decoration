@@ -345,6 +345,12 @@ body {
   opacity: 1 !important;
   visibility: visible !important; }
 
+.u-opacity0 {
+  opacity: 0 !important; }
+
+.u-invisible {
+  visibility: hidden !important; }
+
 .u-width-half {
   width: 50% !important; }
 
