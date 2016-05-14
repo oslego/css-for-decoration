@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exploded Layers</title>
+  <style>
+    html, body {
+      height: 100%;
+    }
+    body {
+      display: flex;
+      flex-flow: column;
+    }
+
+    .u-invisible {
+      visibility: hidden !important;
+    }
+
+    .demo {
+      margin: auto;
+      width: 100vw;
+      height: 100vh;
+
+      background-image: linear-gradient(100deg, skyblue 50%, transparent 0), radial-gradient(closest-side circle, yellow 99%, transparent 0), linear-gradient(purple, purple);
+      background-repeat: no-repeat;
+      background-size: 100% 100%, 50% 50%, 100% 100%;
+      background-position: 0 0, 50% 50%, 0 0;
+    }
+
+    .bg-stack-container {
+      position: absolute;
+      /*outline: 10px solid red;*/
+      perspective: 1000px;
+      transform: translateZ(0);
+    }
+
+    .bg-stack-container.animated .bg-stack{
+      transform: rotateX(55deg) rotateY(0) rotateZ(calc(var(--xoffset, 0) * 1deg)) scale(.65);
+    }
+
+    .bg-stack {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      perspective: 1000px;
+      transition: transform 2s ease-out;
+    }
+
+    .bg-stack__layer {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      transition: transform 2s ease-out, box-shadow 2s, opacity 2s;
+    }
+
+    .bg-stack-container.animated .bg-stack__layer{
+      opacity: 0.85;
+      box-shadow: 0 0 20px black;
+    }
+
+    .bg-stack-container.animated .bg-stack__layer:nth-child(1){
+
+    }
+
+    .bg-stack-container.animated .bg-stack__layer:nth-child(2){
+      transform: translateY(calc(var(--yoffset, 0) * -100px)) translateZ(calc(var(--yoffset, 0) * 100px));
+    }
+
+    .bg-stack-container.animated .bg-stack__layer:nth-child(3){
+      transform: translateY(calc(var(--yoffset, 0) * -200px)) translateZ(calc(var(--yoffset, 0) * 200px));
+    }
+
+  </style>
+
+</head>
+<body>
+  <div class="demo"></div>
+
+  <script>
+    function LayerStack(el) {
+      var _qs = document.querySelector.bind(document);
+
+      if (!el) {
+        throw Error('Missing input element');
+        return;
+      }
+
+      function getBackgroundLayers(el) {
+        var style = window.getComputedStyle(el)
+
+        var images = style.getPropertyValue('background-image');
+
+        /* Add an extra paranthesis at end of each gradient declaration,
+        then split by one paranthesis and comma to yield an array of valid
+        gradient declarations.
+        */
+        images = images.replace(/\),/gi, ')),').split('),');
+
+        var layers = images.map(function(img) {
+          return { 'background-image': img }
+        });
+
+        // All other bg properties can be split by comma.
+        var props = ['background-size', 'background-repeat', 'background-position', 'background-origin'];
+        props.forEach(function(prop) {
+          style.getPropertyValue(prop).split(',').forEach(function(value, index) {
+            layers[index][prop] = value.trim();
+          })
+        })
+
+        return layers;
+      }
+
+      var sourceEl = el;
+      var sourceElBox = sourceEl.getBoundingClientRect();
+      var sourceElBgLayers = getBackgroundLayers(sourceEl);
+
+      var stack = document.createElement('div');
+      stack.classList.add('bg-stack');
+
+      var stackContainer = document.createElement('div');
+      stackContainer.classList.add('bg-stack-container');
+      stackContainer.appendChild(stack);
+
+      sourceElBgLayers.forEach(function(layer) {
+        var stackLayer = document.createElement('div')
+        stackLayer.classList.add('bg-stack__layer');
+        for (var prop in layer){
+          stackLayer.style[prop] = layer[prop];
+        }
+
+        // DOM order is reverse z-order; insert bottom layers at top of stack;
+        stack.insertBefore(stackLayer, stack.firstChild)
+      })
+
+      for (var key in sourceElBox) {
+        stackContainer.style[key] = sourceElBox[key] + 'px';
+      }
+      sourceEl.parentElement.appendChild(stackContainer);
+
+      // Add animated class after appending to DOM so we get smooth transition
+      requestAnimationFrame(function(){
+        stackContainer.classList.add('animated');
+      })
+
+      // Add stylesheet with dynamic values for CSS Variables set by mouse position
+      var cssVars = document.createElement('style');
+      document.head.appendChild(cssVars);
+
+      var maxRotation = 60; // max Z rotation (from -30deg to 30deg)
+      var minRotation = 0;
+      var minLayerOffset = 1;
+      var maxLayerOffset = 4; // max Y layer offset; used in CSS as multiplier
+      var maxWidth = window.innerWidth;
+      var maxHeight = window.innerHeight;
+
+      var ticking = false;
+      var mouseX = 0;
+      var mouseY = 0;
+
+      function updateCSSVars() {
+        ticking = false;
+
+        var xoffset = -1 * ((maxRotation / 2) - (maxRotation / maxWidth) * mouseX);
+        var yoffset = maxLayerOffset - (maxLayerOffset / maxHeight) * mouseY;
+
+        cssVars.innerHTML = `:root { --xoffset: ${xoffset}; --yoffset: ${yoffset} }`;
+      }
+
+      function update(e) {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+
+        if(!ticking) {
+          requestAnimationFrame(updateCSSVars);
+        }
+        
+        ticking = true;
+      }
+
+      document.addEventListener('mousemove', update);
+
+      var _events = {};
+
+      return {
+        destroy: function(){
+          document.removeEventListener('mousemove', update);
+          stackContainer.classList.remove('animated');
+          var self = this;
+
+          function destroyDOM(e) {
+            cssVars.parentElement.removeChild(cssVars);
+            stackContainer.removeEventListener('transitionend', destroyDOM)
+            stackContainer.parentElement.removeChild(stackContainer);
+
+            self.trigger('afterdestroy');
+          }
+
+          stackContainer.addEventListener('transitionend', destroyDOM)
+        },
+
+        on: function(event, fn) {
+          if (!_events[event]) {
+            _events[event] = [];
+          }
+          _events[event].push(fn);
+        },
+
+        trigger: function(event, data) {
+          if (_events[event]) {
+            _events[event].forEach(function(fn){
+              fn.call(this, data);
+            })
+          }
+        }
+
+      }
+    }
+
+    var stack;
+    var demo = document.querySelector('.demo');
+
+    document.addEventListener('click', function() {
+      if (stack) {
+        stack.destroy();
+        return;
+      }
+
+      demo.classList.add('u-invisible');
+
+      stack = new LayerStack(document.querySelector('.demo'));
+      stack.on('afterdestroy', function(){
+        demo.classList.remove('u-invisible');
+
+        // Invalidate ref after DOM cleanup
+        stack = undefined;
+      });
+    })
+
+  </script>
+
+</body>
+</html>
