@@ -146,6 +146,15 @@ section.has-light-background {
 	visibility: visible !important;
 }
 
+.u-opacity0 {
+	opacity: 0 !important;
+}
+
+
+.u-invisible {
+	visibility: hidden !important;
+}
+
 .u-width-half {
 	width: 50% !important;
 }
@@ -191,7 +200,6 @@ section.has-light-background {
 			padding: 0.1em .3em;
 		}
 	}
-
 }
 
 // Custom backgrounds set with `data-state` in HTML
