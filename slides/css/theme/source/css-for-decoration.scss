@@ -150,7 +150,6 @@ section.has-light-background {
 	opacity: 0 !important;
 }
 
-
 .u-invisible {
 	visibility: hidden !important;
 }
@@ -199,6 +198,22 @@ section.has-light-background {
 		li {
 			padding: 0.1em .3em;
 		}
+	}
+
+	cite {
+		font-size: 1.2rem;
+		opacity: 0.5;
+	}
+
+	.skeleton-title {
+		width: 70%;
+		font-size: 5em;
+		// text-align: left;
+		padding-top: 1em;
+		background: url(../../resources/skeleton.svg);
+		background-repeat: repeat-x;
+		background-size: auto 100%;
+		background-position: top center;
 	}
 }
 

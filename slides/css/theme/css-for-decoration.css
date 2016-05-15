@@ -379,5 +379,18 @@ body {
   .reveal ul.list li {
     padding: 0.1em .3em; }
 
+.reveal cite {
+  font-size: 1.2rem;
+  opacity: 0.5; }
+
+.reveal .skeleton-title {
+  width: 70%;
+  font-size: 5em;
+  padding-top: 1em;
+  background: url(../../resources/skeleton.svg);
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+  background-position: top center; }
+
 html.bg-gradient-intro .slide-background.present {
   background: linear-gradient(340deg, #00D7B9, #B95DD7 40%, #FFB367 90%); }
