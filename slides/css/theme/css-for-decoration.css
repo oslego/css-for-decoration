@@ -395,5 +395,16 @@ body {
   background-size: auto 100%;
   background-position: top center; }
 
+.reveal .demo-container--skeleton {
+  background: white;
+  display: flex; }
+
+.reveal .demo.demo--skeleton {
+  margin: auto;
+  width: 500px;
+  height: 400px;
+  overflow: hidden;
+  resize: vertical; }
+
 html.bg-gradient-intro .slide-background.present {
   background: linear-gradient(340deg, #00D7B9, #B95DD7 40%, #FFB367 90%); }

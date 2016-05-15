@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Skeleton Screen</title>
+  <style>
+    html, body {
+      height: 100%;
+    }
+    body {
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      align-items: center;
+      font-family: helvetica;
+    }
+
+    .container {
+      width: 500px;
+      height: 400px;
+      /*outline: 1px solid red;*/
+      overflow: hidden;
+      resize: vertical;
+    }
+
+    .demo {
+      background-image:
+        radial-gradient( 50px circle at top 50px center, lightgray 99%, transparent 0 ),
+        linear-gradient( 120deg, transparent, rgba(255, 255, 255, 0.5) 50%, transparent 80% ),
+        linear-gradient( lightgray 20px, transparent 0 ),
+        linear-gradient( lightgray 20px, transparent 0 ),
+        linear-gradient( lightgray 20px, transparent 0 ),
+        linear-gradient( lightgray 20px, transparent 0 );
+
+      background-repeat: repeat-y;
+      /*background-repeat: no-repeat;*/
+
+      background-size:
+        100px 200px,
+        50px 200px,
+        150px 200px,
+        350px 200px,
+        300px 200px,
+        250px 200px;
+
+      background-position:
+        0 0,
+        0 0,
+        120px 0,
+        120px 40px,
+        120px 80px,
+        120px 120px;
+    }
+
+    .animated {
+      /*animation: fadein 1s, highlight 1s 1s infinite;*/
+      animation: highlight 1s infinite;
+    }
+
+    @keyframes fadein {
+      from { opacity: 0 }
+      to { opacity: 1 }
+    }
+
+    /*
+      TODO: figure out how to inherit background-position.
+      TODO: log issue with Chrome for distributing bg-position evenly to all bg-images when not 1:1 matching.
+    */
+    @keyframes highlight {
+      to {
+        background-position:
+          0 0,     /* disc */
+          100% 0, /* highlight */
+          120px 0,
+          120px 40px,
+          120px 80px,
+          120px 120px;
+      }
+    }
+
+
+  </style>
+</head>
+<body>
+  <h1>Skeleton interfaces</h1>
+  <!-- <div class="container demo"></div> -->
+  <div class="container demo animated"></div>
+</body>
+</html>

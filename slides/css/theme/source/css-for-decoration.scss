@@ -219,6 +219,20 @@ section.has-light-background {
 		background-size: auto 100%;
 		background-position: top center;
 	}
+
+	.demo-container--skeleton {
+		background: white;
+		display: flex;
+	}
+
+	.demo.demo--skeleton{
+		margin: auto;
+		width: 500px;
+		height: 400px;
+		// /*outline: 1px solid red;*/
+		overflow: hidden;
+		resize: vertical;
+	}
 }
 
 // Custom backgrounds set with `data-state` in HTML
