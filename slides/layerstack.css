@@ -45,3 +45,15 @@
 .bg-stack-container.animated .bg-stack__layer:nth-child(3){
   transform: translateY(calc(var(--yoffset, 0) * -200px)) translateZ(calc(var(--yoffset, 0) * 200px));
 }
+
+.bg-stack-container.animated .bg-stack__layer:nth-child(4){
+  transform: translateY(calc(var(--yoffset, 0) * -250px)) translateZ(calc(var(--yoffset, 0) * 250px));
+}
+
+.bg-stack-container.animated .bg-stack__layer:nth-child(5){
+  transform: translateY(calc(var(--yoffset, 0) * -300px)) translateZ(calc(var(--yoffset, 0) * 300px));
+}
+
+.bg-stack-container.animated .bg-stack__layer:nth-child(6){
+  transform: translateY(calc(var(--yoffset, 0) * -350px)) translateZ(calc(var(--yoffset, 0) * 350px));
+}
