@@ -209,6 +209,8 @@ section.has-light-background {
 		opacity: 0.5;
 	}
 
+	// "Skeleton screens" section
+	// ------------------------------------------
 	.skeleton-title {
 		width: 70%;
 		font-size: 5em;
@@ -233,7 +235,109 @@ section.has-light-background {
 		overflow: hidden;
 		resize: vertical;
 	}
+
+	// "Better borders" section
+	// ------------------------------------------
+	.borders-title {
+		font-size: 4em;
+		text-transform: uppercase;
+		letter-spacing: -3px;
+		padding: .2em .4em;
+		border: .2em solid rgba(0, 0, 0, 1);
+
+		background-image:
+			linear-gradient(white, white),
+			linear-gradient(120deg, #00D7B9, #B95DD7 50%, #FFB367 100%);
+
+		background-repeat: no-repeat;
+		background-origin: padding-box, border-box;
+
+		background-size:
+			100% 100%,
+			100% 100%;
+
+		animation:
+			borders-anim1 .6s ease-in forwards,
+			borders-anim2 .6s 1s ease-out forwards,
+			borders-anim3 .6s 2.2s ease-out forwards,
+			borders-anim4 .6s 3.4s ease-out forwards,
+			borders-anim5 .6s 4.5s ease-out forwards,
+			borders-anim6 .6s 5.5s ease-out forwards,
+			borders-anim7 .6s 6.4s ease-out forwards,
+			borders-anim8 .6s 7.2s ease-out forwards;
+	}
+
 }
+
+@keyframes borders-anim1 {
+	to {
+		border-width: 0;
+	}
+}
+
+@keyframes borders-anim2 {
+	from {
+		border-color: rgba(0,0,0,0);
+	}
+	to {
+		border-width: .2em;
+		border-color: rgba(0,0,0,0);
+	}
+}
+
+@keyframes borders-anim3 {
+	to {
+		background-size:
+			100% 100%,
+			50% 50%;
+	}
+}
+
+@keyframes borders-anim4 {
+	to {
+		background-position:
+			100% 100%,
+			100% 0;
+	}
+}
+
+@keyframes borders-anim5 {
+	to {
+		background-position:
+			100% 100%,
+			50% 100%;
+
+		background-size:
+			100% 100%,
+			30% 100%;
+	}
+}
+
+@keyframes borders-anim6 {
+	to {
+		background-position:
+			100% 100%,
+			50% 100%;
+
+		background-size:
+			100% 100%,
+			100% 100%;
+	}
+}
+
+@keyframes borders-anim7 {
+	to {
+		border-width: 0;
+	}
+}
+
+@keyframes borders-anim8 {
+	to {
+		border-width: .2em;
+		border-color: rgba(0,0,0,1);
+	}
+}
+
 
 // Custom backgrounds set with `data-state` in HTML
 // ------------------------------------------
