@@ -35,34 +35,6 @@
 					<h2>Bio</h2>
 				</section>
 
-				<!-- <section>
-					<h2>Code sample</h2>
-					<style id="demo-num">
-					/* Some example CSS */
-					#target {
-						background: red;
-						width: 400px;
-						height: 400px;
-					}
-					</style>
-					<div id="target"></div>
-					<div class="editor-container" data-source="#demo-num"></div>
-				</section> -->
-
-				<section>
-					<div class="flex-layout--row">
-						<div class="cell cell--third">cell 1</div>
-						<div class="cell cell">cell 2</div>
-					</div>
-				</section>
-
-				<section>
-					<div class="flex-layout--column">
-						<div class="cell cell--quarter">cell 1</div>
-						<div class="cell cell--quarter">cell 2</div>
-					</div>
-				</section>
-
 				<section>
 					<div class="flex-layout--row">
 						<h2 class="u-center">... with CSS only</h2>
@@ -118,7 +90,7 @@
 					<h2>Agenda</h2>
 					<ul>
 						<li>Complex gradient backgrounds</li>
-						<li>Skeleton interfaces</li>
+						<li>Skeleton screens</li>
 						<li>Better borders</li>
 						<li>Tool components</li>
 						<li>[stretch] CSS Blend Modes</li>
@@ -133,31 +105,27 @@
 
 				<section>
 					<div class="flex-layout--column">
-						<div class="cell" id="demo-1" data-layerstack>
-<style id="source-demo-1">
+						<style class="editor-source" media="-x-fake">
 	/* CSS linear gradient */
-	#demo-1 {
+	.demo {
 		background-image: linear-gradient( 90deg, turquoise 0%, purple 100% );
 	}
-</style>
-						</div>
-						<div class="cell cell--third | editor-container" data-source="#source-demo-1">
-						</div>
+						</style>
+						<div class="cell | demo" data-layerstack></div>
+						<div class="cell cell--third | editor-container"></div>
 					</div>
 				</section>
 
 				<section>
 					<div class="flex-layout--column">
-						<div class="cell" id="demo-2" data-layerstack>
-<style id="source-demo-2">
+						<style class="editor-source" media="-x-fake">
 	/* CSS radial gradient */
-	#demo-2 {
+	.demo {
 		background-image: radial-gradient( circle, turquoise 0%, purple 100% );
 	}
-</style>
-						</div>
-						<div class="cell cell--third | editor-container" data-source="#source-demo-2">
-						</div>
+						</style>
+						<div class="cell | demo" data-layerstack></div>
+						<div class="cell cell--third | editor-container"></div>
 					</div>
 				</section>
 
@@ -188,10 +156,9 @@
 
 				<section>
 					<div class="flex-layout--column">
-<div class="cell" id="demo-bgprop" data-layerstack>
-<style id="source-demo-bgprop">
+						<style class="editor-source" media="-x-fake">
 	/* Background properties */
-	#demo-bgprop {
+	.demo {
 		background-image: linear-gradient( 120deg, turquoise 50%, rebeccapurple 50% );
 		/*background-size: 50% 50%;*/
 		/*background-repeat: no-repeat;*/
@@ -199,7 +166,7 @@
 	}
 
 	/* Layers */
-	#demo-bgprop {
+	.demo {
 		/*background-image:
 			linear-gradient( 120deg, turquoise 50%, transparent 50% ),
 			linear-gradient( 120deg, transparent 50%, rebeccapurple 50% );*/
@@ -214,9 +181,9 @@
 
 		/*background-repeat: no-repeat;*/
 	}
-</style>
-</div>
-<div class="cell cell--third | editor-container" data-source="#source-demo-bgprop"></div>
+						</style>
+						<div class="cell | demo" data-layerstack></div>
+						<div class="cell cell--third | editor-container"></div>
 					</div>
 				</section>
 
@@ -230,10 +197,9 @@
 
 				<section>
 					<div class="flex-layout--column">
-<div class="cell" id="demo-layers" data-layerstack>
-<style id="source-demo-layers">
+						<style class="editor-source" media="-x-fake">
 	/* Layers */
-	#demo-layers {
+	.demo {
 		background-image:
 			linear-gradient( 120deg, turquoise 50%, transparent 50% ),
 			radial-gradient( closest-side circle, yellow 99%, transparent 0 ),
@@ -251,9 +217,9 @@
 
 		background-repeat: no-repeat;
 	}
-</style>
-</div>
-<div class="cell cell--third | editor-container" data-source="#source-demo-layers"></div>
+						</style>
+						<div class="cell | demo" data-layerstack></div>
+						<div class="cell cell--third | editor-container"></div>
 					</div>
 				</section>
 
@@ -282,26 +248,24 @@
 
 				<section>
 					<div class="flex-layout--column">
-<div class="cell" id="demo-fastco" data-layerstack>
-<style id="source-demo-fastco">
-	/* FastCompany decoration */
-	#demo-fastco {
+						<style class="editor-source" media="-x-fake">
+	/* FastCompany header decoration */
+	.demo {
 		background-image:
 			linear-gradient( 185deg, #fee900 60%, transparent 0 ),
 			linear-gradient( white, white );
 	}
-</style>
-</div>
-<div class="cell cell--third | editor-container" data-source="#source-demo-fastco"></div>
+						</style>
+						<div class="cell | demo" data-layerstack></div>
+						<div class="cell cell--third | editor-container"></div>
 					</div>
 				</section>
 
 				<section>
 					<div class="flex-layout--column">
-<div class="cell" id="demo-stripe" data-layerstack>
-<style id="source-demo-stripe">
-	/* FastCompany decoration */
-	#demo-stripe {
+						<style class="editor-source" media="-x-fake">
+	/* FastCompany stripe decoration */
+	.demo {
 		background-image:
 			linear-gradient( 185deg, transparent 20%, #e2e8ec 0, #e2e8ec 80%, transparent 0 ),
 			linear-gradient( white, white );
@@ -312,9 +276,9 @@
 			0px 0px,
 			0px 0px;
 	}
-</style>
-</div>
-<div class="cell cell--third | editor-container" data-source="#source-demo-stripe"></div>
+						</style>
+						<div class="cell | demo" data-layerstack></div>
+						<div class="cell cell--third | editor-container"></div>
 					</div>
 				</section>
 
@@ -324,11 +288,10 @@
 
 				<section>
 					<div class="flex-layout--column">
-<div class="cell" id="demo-poly" data-layerstack>
-<style id="source-demo-poly">
+						<style class="editor-source" media="-x-fake">
 	/* Polygon background */
-	#demo-poly {
-		background:
+	.demo {
+		background-image:
 			linear-gradient( 60deg, #227766 25%, transparent 0 ),
 			linear-gradient( 350deg, #40D2B3 20%, transparent 0 ),
 			linear-gradient( 125deg, transparent 70%, #39C1A5 70% ),
@@ -336,13 +299,32 @@
 			linear-gradient( 125deg, #35BEA2 70%, transparent 0 );
 	}
 </style>
-</div>
-<div class="cell cell--third | editor-container" data-source="#source-demo-poly"></div>
+						<div class="cell | demo" data-layerstack></div>
+						<div class="cell cell--third | editor-container"></div>
 					</div>
 				</section>
 
 				<section>
-					<h2>DEMO Polkadots</h2>
+					<div class="flex-layout--column">
+						<style class="editor-source" media="-x-fake">
+	/* Polka dots by Lea Verou */
+	.demo {
+		background-image:
+			radial-gradient( white 15%, transparent 16% ),
+			radial-gradient( white 15%, transparent 16% ),
+			linear-gradient( #c51e1e 0, #c51e1e );
+
+		background-size: 60px 60px;
+
+		background-position:
+			0 0,
+			30px 30px,
+			0 0;
+	}
+</style>
+						<div class="cell | demo" data-layerstack></div>
+						<div class="cell cell--third | editor-container"></div>
+					</div>
 				</section>
 
 				<section>
@@ -378,11 +360,12 @@
 
 				<section data-background="bg-skeleton">
 					<div class="flex-layout--column">
-							<h1 class="u-center  | skeleton-title ">Skeleton Interfaces</h1>
+							<h1 class="u-center  | skeleton-title ">Skeleton Screens</h1>
 							<cite class="u-bottom-right">Skeleton by Sebastian Langer from the Noun Project</cite>
 					</div>
-
-
+					<aside class="notes">
+						https://www.youtube.com/watch?v=Rehw8L5Cl8M
+					</aside>
 				</section>
 
 				<section>
@@ -390,12 +373,12 @@
 				</section>
 
 				<section>
-					<p>DEMO Medium skeleton interface</p>
+					<p>DEMO Medium skeleton screen</p>
 					<p>Divide code progression over multiple slides?</p>
 				</section>
 
 				<section>
-					<h3>Skeleton UI pros with CSS Gradients</h3>
+					<h3>Skeleton screen pros with CSS Gradients</h3>
 					<ul>
 						<li>performance++</li>
 						<li>No assets to download</li>
@@ -548,10 +531,13 @@
 					// Remove DOM and dereference editor instance. CodeMirror cleans-up after itself.
 					prev.querySelector('.CodeMirror').remove();
 					editor = undefined;
+
+					// Disable stylesheet used with code editor
+					prev.querySelector('.editor-source').setAttribute('media', '-x-fake');
 				}
 
 				editorContainer = current.querySelector('.editor-container');
-				sourceElement = editorContainer && document.querySelector(editorContainer.dataset.source);
+				sourceElement = current.querySelector('.editor-source');
 
 				// Enable CodeMirror editor for stylesheet source, if any.
 				if (editorContainer && sourceElement) {
@@ -565,6 +551,11 @@
 					editor.on('change', function(instance, changeObj) {
 						sourceElement.innerHTML = instance.getValue();
 					});
+
+					// Enable stylesheet
+					sourceElement.setAttribute('media', 'screen');
+					// Forces reflow, otherwise styles don't immediately apply.
+					sourceElement.textContent += ' ';
 
 					// Enable Emmet keyboard shortcuts.
 					emmetCodeMirror(editor, emmetKeyOptions);
