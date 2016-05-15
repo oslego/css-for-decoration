@@ -368,24 +368,125 @@
 					</aside>
 				</section>
 
-				<section>
-					<p>Splash screenshots: Medium, Facebook</p>
+				<section data-background-color="#ffffff" data-background-image="resources/loading.gif" data-background-size="20%">
+					<aside class="notes">
+						Progress indicators: too  much emphasis on "indicator" instead of "progress"
+					</aside>
+				</section>
+
+				<section data-background-color="#ffffff" data-background-image="resources/skeleton-screens.png" data-background-size="100%">
+					<div class="flex-layout--column">
+						<cite class="u-bottom-right">Skeleton screen examples by <a href="https://plus.google.com/+LukeWroblewski/posts/UvzW7ZeQxsT" target="_blank">Luke Wroblewski</a></cite>
+					</div>
 				</section>
 
 				<section>
-					<p>DEMO Medium skeleton screen</p>
-					<p>Divide code progression over multiple slides?</p>
+					<div class="flex-layout--column">
+						<style class="editor-source" media="-x-fake">
+	/* Skeleton screen */
+	.demo {
+		background-image:
+			radial-gradient( 50px circle at top 50px center, lightgray 99%, transparent 0 ),
+			linear-gradient( lightgray 20px, transparent 0 ),
+			linear-gradient( lightgray 20px, transparent 0 ),
+			linear-gradient( lightgray 20px, transparent 0 ),
+			linear-gradient( lightgray 20px, transparent 0 );
+
+		background-repeat: repeat-y;
+		/*background-repeat: no-repeat;*/
+
+		background-size:
+			100px 200px, /* circle */
+			150px 200px,
+			350px 200px,
+			300px 200px,
+			250px 200px;
+
+		background-position:
+			0 0, /* circle */
+			120px 0,
+			120px 40px,
+			120px 80px,
+			120px 120px;
+	}
+						</style>
+						<div class="cell | demo-container--skeleton" >
+							<div class="demo demo--skeleton"></div>
+						</div>
+						<div class="cell cell--third | editor-container"></div>
+					</div>
+
+					<aside class="notes">
+						<ul>
+							<li>performance ++</li>
+							<li>No assets download</li>
+							<li>No uneccesary HTML</li>
+							<li>No JS, use :empty selector</li>
+						</ul>
+					</aside>
 				</section>
 
 				<section>
-					<h3>Skeleton screen pros with CSS Gradients</h3>
-					<ul>
-						<li>performance++</li>
-						<li>No assets to download</li>
-						<li>No uneccesary HTML</li>
-						<li>No JS</li>
-						<li>trick with :empty selector</li>
-					</ul>
+					<div class="flex-layout--column">
+						<style class="editor-source" media="-x-fake">
+	/* Animated skeleton screen */
+	.demo {
+		background-image:
+			radial-gradient( 50px circle at top 50px center, lightgray 99%, transparent 0 ),
+			linear-gradient( 100deg, transparent, rgba(255, 255, 255, 0.5) 50%, transparent 80% ),
+			linear-gradient( lightgray 20px, transparent 0 ),
+			linear-gradient( lightgray 20px, transparent 0 ),
+			linear-gradient( lightgray 20px, transparent 0 ),
+			linear-gradient( lightgray 20px, transparent 0 );
+
+		background-repeat: repeat-y;
+		/*background-repeat: no-repeat;*/
+
+		background-size:
+			100px 200px, /* circle */
+			50px 200px, /* highlight */
+			150px 200px,
+			350px 200px,
+			300px 200px,
+			250px 200px;
+
+		background-position:
+			0 0, /* circle */
+			0 0, /* highlight */
+			120px 0,
+			120px 40px,
+			120px 80px,
+			120px 120px;
+
+		animation: shine 1s infinite;
+	}
+
+	@keyframes shine {
+		to {
+			background-position:
+				0 0,
+				100% 0, /* highlight */
+				120px 0,
+				120px 40px,
+				120px 80px,
+				120px 120px;
+		}
+	}
+						</style>
+						<div class="cell | demo-container--skeleton" >
+							<div class="demo demo--skeleton"></div>
+						</div>
+						<div class="cell cell--third | editor-container"></div>
+					</div>
+
+					<aside class="notes">
+						<ul>
+							<li>performance ++</li>
+							<li>No assets download</li>
+							<li>No uneccesary HTML</li>
+							<li>No JS, use :empty selector</li>
+						</ul>
+					</aside>
 				</section>
 
 				<section>
