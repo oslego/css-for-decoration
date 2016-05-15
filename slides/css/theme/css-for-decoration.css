@@ -354,6 +354,9 @@ body {
 .u-width-half {
   width: 50% !important; }
 
+.u-width-threequarters {
+  width: 75% !important; }
+
 .u-align-right {
   text-align: right !important; }
 

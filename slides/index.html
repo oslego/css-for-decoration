@@ -81,6 +81,10 @@
 					<p>http://stackoverflow.com/questions/27874354/lemon-shape-css-and-html</p>
 				</section>
 
+				<section>
+					<p>bad code example</p>
+				</section>
+
 				<section data-background="resources/meme-jeff-goldblum.jpeg">
 
 				</section>
@@ -133,7 +137,7 @@
 <style id="source-demo-1">
 	/* CSS linear gradient */
 	#demo-1 {
-		background-image: linear-gradient( 90deg, yellow 0%, purple 100% );
+		background-image: linear-gradient( 90deg, turquoise 0%, purple 100% );
 	}
 </style>
 						</div>
@@ -148,7 +152,7 @@
 <style id="source-demo-2">
 	/* CSS radial gradient */
 	#demo-2 {
-		background-image: radial-gradient( circle, yellow 0%, purple 100% );
+		background-image: radial-gradient( circle, turquoise 0%, purple 100% );
 	}
 </style>
 						</div>
@@ -183,24 +187,61 @@
 				</section>
 
 				<section>
-					<h2>Multiple background declarations</h2>
-					<p>"Layers"</p>
+					<div class="flex-layout--column">
+<div class="cell" id="demo-bgprop" data-layerstack>
+<style id="source-demo-bgprop">
+	/* Background properties */
+	#demo-bgprop {
+		background-image: linear-gradient( 120deg, turquoise 50%, rebeccapurple 50% );
+		/*background-size: 50% 50%;*/
+		/*background-repeat: no-repeat;*/
+		/*background-position: center center;*/
+	}
+
+	/* Layers */
+	#demo-bgprop {
+		/*background-image:
+			linear-gradient( 120deg, turquoise 50%, transparent 50% ),
+			linear-gradient( 120deg, transparent 50%, rebeccapurple 50% );*/
+
+		/*background-size:
+			100% 100%,
+			100% 100%;*/
+
+		/*background-position:
+			center center,
+			center center;*/
+
+		/*background-repeat: no-repeat;*/
+	}
+</style>
+</div>
+<div class="cell cell--third | editor-container" data-source="#source-demo-bgprop"></div>
+					</div>
+				</section>
+
+				<section>
+					<div class="flex-layout--row">
+						<h2 class="u-top-right u-width-threequarters u-align-right | fragment fragment--trigger-highlight | u-opacity1">
+							An element can have <br><span class="highlight">multiple gradients</span> <br>as one background.
+						</h2>
+					</div>
 				</section>
 
 				<section>
 					<div class="flex-layout--column">
-<div class="cell" id="demo-3" data-layerstack>
-<style id="source-demo-3">
-	/* Multiple backgrounds */
-	#demo-3 {
+<div class="cell" id="demo-layers" data-layerstack>
+<style id="source-demo-layers">
+	/* Layers */
+	#demo-layers {
 		background-image:
-			linear-gradient( 100deg, skyblue 50%, transparent 0 ),
+			linear-gradient( 120deg, turquoise 50%, transparent 50% ),
 			radial-gradient( closest-side circle, yellow 99%, transparent 0 ),
-			linear-gradient( purple, purple );
+			linear-gradient( 120deg, transparent 50%, rebeccapurple 50% );
 
 		background-size:
 			100% 100%,
-			50% 50%,
+			80% 80%,
 			100% 100%;
 
 		background-position:
@@ -212,7 +253,7 @@
 	}
 </style>
 </div>
-<div class="cell cell--third | editor-container" data-source="#source-demo-3"></div>
+<div class="cell cell--third | editor-container" data-source="#source-demo-layers"></div>
 					</div>
 				</section>
 
@@ -241,33 +282,39 @@
 
 				<section>
 					<div class="flex-layout--column">
-<div class="cell" id="demo-4" data-layerstack>
-<style id="source-demo-4">
-	/* FastCo decoration */
-	#demo-4 {
+<div class="cell" id="demo-fastco" data-layerstack>
+<style id="source-demo-fastco">
+	/* FastCompany decoration */
+	#demo-fastco {
 		background-image:
 			linear-gradient( 185deg, #fee900 60%, transparent 0 ),
 			linear-gradient( white, white );
 	}
 </style>
 </div>
-<div class="cell cell--third | editor-container" data-source="#source-demo-4"></div>
+<div class="cell cell--third | editor-container" data-source="#source-demo-fastco"></div>
 					</div>
 				</section>
 
 				<section>
 					<div class="flex-layout--column">
-<div class="cell" id="demo-5" data-layerstack>
-<style id="source-demo-5">
-	/* FastCo decoration */
-	#demo-5 {
+<div class="cell" id="demo-stripe" data-layerstack>
+<style id="source-demo-stripe">
+	/* FastCompany decoration */
+	#demo-stripe {
 		background-image:
-			linear-gradient( 185deg, transparent 20%, #e2e8ec 20%, #e2e8ec 80%, transparent 0 ),
+			linear-gradient( 185deg, transparent 20%, #e2e8ec 0, #e2e8ec 80%, transparent 0 ),
 			linear-gradient( white, white );
+
+		background-repeat: no-repeat;
+
+		background-position:
+			0px 0px,
+			0px 0px;
 	}
 </style>
 </div>
-<div class="cell cell--third | editor-container" data-source="#source-demo-5"></div>
+<div class="cell cell--third | editor-container" data-source="#source-demo-stripe"></div>
 					</div>
 				</section>
 
@@ -277,10 +324,10 @@
 
 				<section>
 					<div class="flex-layout--column">
-<div class="cell" id="demo-6" data-layerstack>
-<style id="source-demo-6">
+<div class="cell" id="demo-poly" data-layerstack>
+<style id="source-demo-poly">
 	/* Polygon background */
-	#demo-6 {
+	#demo-poly {
 		background:
 			linear-gradient( 60deg, #227766 25%, transparent 0 ),
 			linear-gradient( 350deg, #40D2B3 20%, transparent 0 ),
@@ -290,7 +337,7 @@
 	}
 </style>
 </div>
-<div class="cell cell--third | editor-container" data-source="#source-demo-6"></div>
+<div class="cell cell--third | editor-container" data-source="#source-demo-poly"></div>
 					</div>
 				</section>
 
