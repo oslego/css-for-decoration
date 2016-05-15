@@ -497,17 +497,71 @@
 					</div>
 				</section>
 
-
 				<section>
 					<p>ILLUSTRATE background-origin</p>
 				</section>
 
 				<section>
-					<h2>image border</h2>
+					<div class="flex-layout--column">
+						<style class="editor-source" media="-x-fake">
+	/* Gradient border */
+	.reveal .demo {
+		border: 30px solid black;
+		/*border: 30px solid transparent;*/
+
+		background-image:
+			linear-gradient( white, white ),
+			linear-gradient( 270deg, #00D7B9 0, #B95DD7 50%, #FFB367 100% );
+
+		background-repeat: no-repeat;
+
+		background-origin:
+			padding-box, /* white bg */
+			border-box;  /* gradient bg */
+
+		background-size:
+			100% 100%, /* white bg */
+			100% 100%; /* gradient bg */
+
+		background-position:
+			0% 0%, /* white bg */
+			0% 0%; /* gradient bg */
+	}
+						</style>
+						<div class="cell | demo-container--border" >
+							<div class="demo demo--border" data-layerstack>Gradient border</div>
+						</div>
+						<div class="cell cell--third | editor-container"></div>
+					</div>
 				</section>
 
 				<section>
-					<h2>Gradient border</h2>
+					<div class="flex-layout--column">
+						<style class="editor-source" media="-x-fake">
+	/* Gradient border */
+	.reveal .demo {
+		border: 50px solid transparent;
+
+		background-image:
+			linear-gradient( white, white ),
+			url(resources/image-border.jpeg);
+
+		background-repeat: no-repeat;
+
+		background-origin:
+			padding-box,
+			border-box;
+
+		background-size:
+			100% 100%,
+			cover;
+	}
+						</style>
+						<div class="cell | demo-container--border" >
+							<div class="demo demo--border" data-layerstack>Image border</div>
+						</div>
+						<div class="cell cell--third | editor-container"></div>
+					</div>
 				</section>
 
 				<section>
@@ -573,6 +627,7 @@
 					<p>Reveal.js: https://github.com/hakimel/reveal.js/</p>
 					<p>CodeMirror: https://github.com/codemirror/CodeMirror</p>
 					<p>Emmet for CodeMirror: https://github.com/emmetio/codemirror</p>
+					<p>border image form NASA: https://unsplash.com/@nasa</p>
 				</section>
 
 			</div>

@@ -17,6 +17,9 @@ function LayerStack(el) {
   function getBackgroundLayers(el) {
     var style = window.getComputedStyle(el)
 
+    // TODO: add support for separate border declarations
+    var border = style.getPropertyValue('border');
+
     var images = style.getPropertyValue('background-image');
 
     /* Add an extra paranthesis at end of each gradient declaration,
@@ -34,8 +37,14 @@ function LayerStack(el) {
     props.forEach(function(prop) {
       style.getPropertyValue(prop).split(',').forEach(function(value, index) {
         layers[index][prop] = value.trim();
+        layers[index]['border'] = border;
+
+        // TODO find actual box sizing
+        layers[index]['box-sizing'] = 'border-box';
       })
     })
+
+    console.log(layers)
 
     return layers;
   }

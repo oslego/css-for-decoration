@@ -267,6 +267,23 @@ section.has-light-background {
 			borders-anim8 .6s 7.2s ease-out forwards;
 	}
 
+	.demo-container--border {
+		background: white;
+		display: flex;
+	}
+
+	.demo--border{
+		margin: auto;
+		color: #000;
+		letter-spacing: -2px;
+		font-family: $headingFont;
+		font-size: $heading1Size;
+		text-transform: uppercase;
+		font-weight: 600;
+		padding: .2em .4em;
+	}
+
+
 }
 
 @keyframes borders-anim1 {
