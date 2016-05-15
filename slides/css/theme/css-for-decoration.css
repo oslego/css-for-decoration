@@ -418,6 +418,20 @@ body {
   background-size: 100% 100%, 100% 100%;
   animation: borders-anim1 .6s ease-in forwards, borders-anim2 .6s 1s ease-out forwards, borders-anim3 .6s 2.2s ease-out forwards, borders-anim4 .6s 3.4s ease-out forwards, borders-anim5 .6s 4.5s ease-out forwards, borders-anim6 .6s 5.5s ease-out forwards, borders-anim7 .6s 6.4s ease-out forwards, borders-anim8 .6s 7.2s ease-out forwards; }
 
+.reveal .demo-container--border {
+  background: white;
+  display: flex; }
+
+.reveal .demo--border {
+  margin: auto;
+  color: #000;
+  letter-spacing: -2px;
+  font-family: "Open Sans", "Source Sans Pro", Helvetica, sans-serif;
+  font-size: 3.5em;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: .2em .4em; }
+
 @keyframes borders-anim1 {
   to {
     border-width: 0; } }
