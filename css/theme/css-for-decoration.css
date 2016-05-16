@@ -402,7 +402,7 @@ body {
 .reveal .demo.demo--skeleton {
   margin: auto;
   width: 500px;
-  height: 400px;
+  height: 200px;
   overflow: hidden;
   resize: vertical; }
 
@@ -431,6 +431,15 @@ body {
   text-transform: uppercase;
   font-weight: 600;
   padding: .2em .4em; }
+
+.reveal .demo-container--input {
+  background: white;
+  display: flex; }
+
+.reveal .demo--input {
+  margin: auto;
+  width: 500px;
+  outline: none; }
 
 @keyframes borders-anim1 {
   to {

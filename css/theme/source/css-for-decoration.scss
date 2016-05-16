@@ -230,7 +230,7 @@ section.has-light-background {
 	.demo.demo--skeleton{
 		margin: auto;
 		width: 500px;
-		height: 400px;
+		height: 200px;
 		// /*outline: 1px solid red;*/
 		overflow: hidden;
 		resize: vertical;
@@ -256,6 +256,7 @@ section.has-light-background {
 			100% 100%,
 			100% 100%;
 
+		// TODO: simplify animations: one for border grow/shrink + sudden color change
 		animation:
 			borders-anim1 .6s ease-in forwards,
 			borders-anim2 .6s 1s ease-out forwards,
@@ -281,6 +282,19 @@ section.has-light-background {
 		text-transform: uppercase;
 		font-weight: 600;
 		padding: .2em .4em;
+	}
+
+	// "Tool UI" section
+	// ------------------------------------------
+	.demo-container--input {
+		background: white;
+		display: flex;
+	}
+
+	.demo--input{
+		margin: auto;
+		width: 500px;
+		outline: none;
 	}
 
 

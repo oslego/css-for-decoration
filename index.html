@@ -328,14 +328,6 @@
 				</section>
 
 				<section>
-					<h2>DEMO Target</h2>
-				</section>
-
-				<section>
-					<h2>Screenshot Stripe Atlas</h2>
-				</section>
-
-				<section>
 					<h2>Video Swiss in CSS</h2>
 				</section>
 
@@ -549,8 +541,8 @@
 		background-repeat: no-repeat;
 
 		background-origin:
-			padding-box,
-			border-box;
+			padding-box,/* white bg */
+			border-box; /* image bg */
 
 		background-size:
 			100% 100%,
@@ -578,8 +570,40 @@
 				</section>
 
 				<section>
-					<h2>Range input</h2>
-					<p>Incremental code with slides</p>
+					<div class="flex-layout--column">
+						<style class="editor-source" media="-x-fake">
+	/* Range input decoration */
+	.demo {
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+
+		background-image:
+			linear-gradient( 90deg, black 2px, transparent 0 ),
+			linear-gradient( 90deg, red 2px, transparent 0 );
+
+		background-repeat: repeat-x;
+
+		background-size:
+			50px 100%,
+			10px 50%;
+
+		background-position:
+			0 0,
+			0 50%;
+
+		padding: 20px 0;
+		box-sizing: border-box;
+		background-origin: border-box;
+		border-left: 3px solid white;
+		border-right: 3px solid white;
+	}
+						</style>
+						<div class="cell | demo-container--input" >
+							<input type="range" class="demo demo--input" value="0">
+						</div>
+						<div class="cell cell--half | editor-container"></div>
+					</div>
 				</section>
 
 				<section>
@@ -708,6 +732,11 @@
 						theme: 'dracula',
 						profile: 'xhtml'
 					});
+
+					// Manually size editor due to bug with Flexbox layout
+					// @see: https://github.com/codemirror/CodeMirror/issues/3679 
+					var rect = editorContainer.getBoundingClientRect();
+					editorContainer.querySelector('.CodeMirror').style.height = rect.height + 'px'
 
 					editor.on('change', function(instance, changeObj) {
 						sourceElement.innerHTML = instance.getValue();
