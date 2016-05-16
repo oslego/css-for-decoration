@@ -360,6 +360,21 @@ body {
 .u-align-right {
   text-align: right !important; }
 
+.reveal img.screenshot {
+  border: 0;
+  box-shadow: none; }
+
+.reveal a img,
+.reveal a:hover img {
+  background: none;
+  border: none;
+  box-shadow: none; }
+
+.reveal img.screenshot--share {
+  max-width: 80%;
+  max-height: 80%;
+  margin-bottom: 0; }
+
 .reveal .fragment--trigger-highlight.visible .highlight {
   transition: all .5s;
   background-color: #FDD835;
