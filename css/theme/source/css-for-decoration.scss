@@ -57,7 +57,6 @@ section.has-light-background {
 	.cell {
 		width: auto;
 		flex: 1 0 auto;
-		outline: 1px solid lime;
 	}
 
 	.cell--half {
@@ -92,7 +91,6 @@ section.has-light-background {
 	.cell {
 		height: auto;
 		flex: 1 0 auto;
-		outline: 1px solid lime;
 		overflow: hidden;
 		resize: vertical;
 	}
@@ -116,6 +114,12 @@ section.has-light-background {
 	.cell--tenth {
 		max-height: 10%;
 	}
+}
+
+.cell--vpack {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
 
@@ -166,6 +170,10 @@ section.has-light-background {
  text-align: right !important;
 }
 
+.u-align-left {
+ text-align: left !important;
+}
+
 .reveal {
 	img.screenshot {
 		border: 0;
@@ -184,7 +192,6 @@ section.has-light-background {
 		max-height: 80%;
 		margin-bottom: 0;
 	}
-
 
 	// Custom fragment: highlight children that have "highlight" class, fade others
 	// ------------------------------------------
@@ -208,14 +215,19 @@ section.has-light-background {
 		font-size: 1.5em;
 		margin-top: 1em;
 		font-weight: 600;
+		margin-left: 0;
 
 		&.list--2col{
 			column-count: 2;
 			column-gap: 1.5em;
 		}
 
-		&.list--code{
+		&.list--code {
 			font-family: $codeFont;
+		}
+
+		&.list--bio {
+
 		}
 
 		li {
@@ -404,5 +416,38 @@ section.has-light-background {
 html.bg-gradient-intro {
 	.slide-background.present {
 		background: linear-gradient(340deg, #00D7B9, #B95DD7 40%, #FFB367 90%);
+	}
+}
+
+html.bg-bio {
+	.slide-background.present {
+		background-image: url(../../resources/adobelogo.svg);
+
+		background-size:
+			2em auto;
+
+		background-position: top right 2em;
+
+		background-repeat: no-repeat;
+	}
+}
+
+
+.reveal .avatar {
+	border: none;
+	box-shadow: none;
+	width: 70% !important;
+	border-radius: 50%;
+	height: auto;
+	margin: auto;
+}
+
+$clipPath: polygon(nonzero, 0% 36.1%, 37.6% 0.25%, 86.1% 13.65%, 99.75% 63.65%, 63.1% 100.25%, 13% 84.7%);
+
+@supports ((-webkit-clip-path: $clipPath) or (clip-path: $clipPath)) {
+	.reveal .avatar {
+		-webkit-clip-path: $clipPath;
+		clip-path: $clipPath;
+		border-radius: 0;
 	}
 }

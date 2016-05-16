@@ -290,8 +290,7 @@ body {
   height: 100%; }
   .flex-layout--row .cell {
     width: auto;
-    flex: 1 0 auto;
-    outline: 1px solid lime; }
+    flex: 1 0 auto; }
   .flex-layout--row .cell--half {
     max-width: 50%; }
   .flex-layout--row .cell--third {
@@ -312,7 +311,6 @@ body {
   .flex-layout--column .cell {
     height: auto;
     flex: 1 0 auto;
-    outline: 1px solid lime;
     overflow: hidden;
     resize: vertical; }
   .flex-layout--column .cell--half {
@@ -325,6 +323,11 @@ body {
     max-height: 20%; }
   .flex-layout--column .cell--tenth {
     max-height: 10%; }
+
+.cell--vpack {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
 
 .u-center {
   margin: auto !important; }
@@ -360,6 +363,9 @@ body {
 .u-align-right {
   text-align: right !important; }
 
+.u-align-left {
+  text-align: left !important; }
+
 .reveal img.screenshot {
   border: 0;
   box-shadow: none; }
@@ -388,7 +394,8 @@ body {
   list-style: none;
   font-size: 1.5em;
   margin-top: 1em;
-  font-weight: 600; }
+  font-weight: 600;
+  margin-left: 0; }
   .reveal ul.list.list--2col {
     column-count: 2;
     column-gap: 1.5em; }
@@ -503,3 +510,23 @@ body {
 
 html.bg-gradient-intro .slide-background.present {
   background: linear-gradient(340deg, #00D7B9, #B95DD7 40%, #FFB367 90%); }
+
+html.bg-bio .slide-background.present {
+  background-image: url(../../resources/adobelogo.svg);
+  background-size: 2em auto;
+  background-position: top right 2em;
+  background-repeat: no-repeat; }
+
+.reveal .avatar {
+  border: none;
+  box-shadow: none;
+  width: 70% !important;
+  border-radius: 50%;
+  height: auto;
+  margin: auto; }
+
+@supports (-webkit-clip-path: polygon(nonzero, 0% 36.1%, 37.6% 0.25%, 86.1% 13.65%, 99.75% 63.65%, 63.1% 100.25%, 13% 84.7%)) or (clip-path: polygon(nonzero, 0% 36.1%, 37.6% 0.25%, 86.1% 13.65%, 99.75% 63.65%, 63.1% 100.25%, 13% 84.7%)) {
+  .reveal .avatar {
+    -webkit-clip-path: polygon(nonzero, 0% 36.1%, 37.6% 0.25%, 86.1% 13.65%, 99.75% 63.65%, 63.1% 100.25%, 13% 84.7%);
+    clip-path: polygon(nonzero, 0% 36.1%, 37.6% 0.25%, 86.1% 13.65%, 99.75% 63.65%, 63.1% 100.25%, 13% 84.7%);
+    border-radius: 0; } }
