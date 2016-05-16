@@ -432,7 +432,7 @@ body {
   font-weight: 600;
   padding: .2em .4em; }
 
-.reveal .demo-container--input {
+.reveal .demo-container--tools {
   background: white;
   display: flex; }
 
@@ -440,6 +440,13 @@ body {
   margin: auto;
   width: 500px;
   outline: none; }
+
+.reveal .demo--wizzard {
+  margin: auto;
+  outline: none; }
+  .reveal .demo--wizzard::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none; }
 
 @keyframes borders-anim1 {
   to {

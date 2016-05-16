@@ -599,7 +599,7 @@
 		border-right: 3px solid white;
 	}
 						</style>
-						<div class="cell | demo-container--input" >
+						<div class="cell | demo-container--tools" >
 							<input type="range" class="demo demo--input" value="0">
 						</div>
 						<div class="cell cell--half | editor-container"></div>
@@ -607,9 +607,49 @@
 				</section>
 
 				<section>
-					<h2>wizzard input</h2>
-				</section>
+					<div class="flex-layout--column">
+						<style class="editor-source" media="-x-fake">
+	/* "Wizzard input" inspired by Ana Tudor aka @thebabydino */
+	/* <input type="range" class="demo" min=0 max=2 step=1 value=1 > */
 
+	.demo {
+		-webkit-appearance: none;
+		appearance: none;
+
+		background-image:
+			radial-gradient( circle at 0.5em center, white 0.3125em, skyblue 0.3125em, skyblue 0.5em, transparent 0.5em ),
+			linear-gradient( 90deg, skyblue 0, skyblue);
+
+		background-size:
+			6.25em 1em,
+			6.25em 0.25em;
+
+		background-repeat: repeat-x;
+
+		background-position:
+			0 0, 0 50%;
+
+		font-size: 2em;
+		width: 13.5em;
+		height: 1em;
+	}
+
+	.demo::-webkit-slider-thumb {
+		-webkit-appearance: none;
+		appearance: none;
+
+		background-image: radial-gradient( circle, red 35%, transparent 0 );
+		width: 1em;
+		height: 1em;
+	}
+
+						</style>
+						<div class="cell | demo-container--tools" >
+							<input type="range" class="demo demo--wizzard" value=1 min=0 max=2 step=1>
+						</div>
+						<div class="cell cell--half | editor-container"></div>
+					</div>
+				</section>
 				<section>
 					<h2>@thebabydino</h2>
 					<p>Ana Tudor's sliders</p>

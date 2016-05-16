@@ -273,7 +273,7 @@ section.has-light-background {
 		display: flex;
 	}
 
-	.demo--border{
+	.demo--border {
 		margin: auto;
 		color: #000;
 		letter-spacing: -2px;
@@ -286,16 +286,27 @@ section.has-light-background {
 
 	// "Tool UI" section
 	// ------------------------------------------
-	.demo-container--input {
+	.demo-container--tools {
 		background: white;
 		display: flex;
 	}
 
-	.demo--input{
+	.demo--input {
 		margin: auto;
 		width: 500px;
 		outline: none;
 	}
+
+	.demo--wizzard {
+		margin: auto;
+		outline: none;
+
+		&::-webkit-slider-thumb {
+			-webkit-appearance: none;
+			appearance: none;
+		}
+	}
+
 
 
 }
