@@ -243,17 +243,6 @@ section.has-light-background {
 
 	// "Skeleton screens" section
 	// ------------------------------------------
-	.skeleton-title {
-		width: 70%;
-		font-size: 5em;
-		// text-align: left;
-		padding-top: 1em;
-		background: url(../../resources/skeleton.svg);
-		background-repeat: repeat-x;
-		background-size: auto 100%;
-		background-position: top center;
-	}
-
 	.demo-container--skeleton {
 		background: white;
 		display: flex;
@@ -474,6 +463,14 @@ html.bg-bio {
 			center center;
 
 		background-repeat: no-repeat;
+	}
+}
+
+html.bg-skeleton {
+	.slide-background.present {
+		background-image: url(../../resources/skeleton.svg);
+		background-size: auto 6em;
+		background-repeat: repeat;
 	}
 }
 
