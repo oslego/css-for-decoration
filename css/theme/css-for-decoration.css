@@ -425,10 +425,13 @@ body {
   letter-spacing: -3px;
   padding: .2em .4em;
   border: 0.2em solid black;
+  font-weight: 700;
   background-image: linear-gradient(white, white), linear-gradient(120deg, #00D7B9, #B95DD7 50%, #FFB367 100%);
   background-repeat: no-repeat;
   background-origin: padding-box, border-box;
-  background-size: 100% 100%, 100% 100%;
+  background-size: 100% 100%, 100% 100%; }
+
+.reveal .borders-title:hover {
   animation: borders-anim1 .6s ease-in forwards, borders-anim2 .6s 1s ease-out forwards, borders-anim3 .6s 2.2s ease-out forwards, borders-anim4 .6s 3.4s ease-out forwards, borders-anim5 .6s 4.5s ease-out forwards, borders-anim6 .6s 5.5s ease-out forwards, borders-anim7 .6s 6.4s ease-out forwards, borders-anim8 .6s 7.2s ease-out forwards; }
 
 .reveal .demo-container--border {
@@ -442,7 +445,7 @@ body {
   font-family: "Open Sans", "Source Sans Pro", Helvetica, sans-serif;
   font-size: 3.5em;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 700;
   padding: .2em .4em; }
 
 .reveal .demo-container--tools {
