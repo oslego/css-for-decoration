@@ -366,6 +366,20 @@ body {
 .u-align-left {
   text-align: left !important; }
 
+.u-twitter {
+  position: relative; }
+
+.u-twitter::before {
+  position: absolute;
+  left: -1.5em;
+  content: ' ';
+  background-image: url(../../resources/twitter.svg);
+  background-repeat: no-repeat;
+  height: 1.5em;
+  width: 1.5em;
+  display: block;
+  background-size: contain; }
+
 .reveal img.screenshot {
   border: 0;
   box-shadow: none; }
@@ -548,6 +562,14 @@ html.bg-skeleton .slide-background.present {
 
 html.bg-title .slide-background.present {
   background-color: rebeccapurple; }
+
+html.bg-key .slide-background.present {
+  background-color: #08479b;
+  background-image: url(../../resources/key.svg), linear-gradient(120deg, transparent 50%, #073c83 0);
+  background-size: auto 18em, 100% 100%;
+  background-position: left bottom -2em, center center;
+  background-repeat: no-repeat;
+  transition: none; }
 
 .reveal .avatar {
   border: none;
