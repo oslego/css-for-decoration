@@ -27,40 +27,47 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>
-					<h1>CSS for Decoration</h1>
+
+				<section data-state="bg-title">
+					<div class="flex-layout--column">
+						<div class="cell cell--vpack">
+						<h1 class="talk--title">
+							<span class="part1">CSS</span>
+							<span class="part2">for</span>
+							<span class="part3">Decoration</span>
+						</h1>
+						</div>
+					</div>
 				</section>
 
-				<section data-state="bg-bio" data-background-color="#fff">
-					<section>
-						<div class="flex-layout--row">
+				<section data-state="bg-bio">
+					<div class="flex-layout--row">
 
-							<div class="cell cell--half cell--vpack">
-								<img class="avatar" src="resources/avatar.jpg" alt="">
-							</div>
-
-							<div class="cell cell--half cell--vpack">
-								<h2 class="u-align-left">Razvan Caliman</h2>
-								<ul class="list">
-									<li>CSS Shapes</li>
-									<li>CSS Regions</li>
-									<li>CSS Masking</li>
-									<li>CSS Blend Modes</li>
-									<li>tools & prototypes</li>
-								</ul>
-							</div>
+						<div class="cell cell--half cell--vpack">
+							<img class="avatar" src="resources/avatar.jpg" alt="">
 						</div>
-					</section>
+
+						<div class="cell cell--half cell--vpack">
+							<h2 class="u-align-left">Razvan Caliman</h2>
+							<ul class="list">
+								<li>CSS Shapes</li>
+								<li>CSS Regions</li>
+								<li>CSS Masking</li>
+								<li>CSS Blend Modes</li>
+								<li>tools & prototypes</li>
+							</ul>
+						</div>
+					</div>
 				</section>
 
 				<section>
 					<div class="flex-layout--row">
-						<h2 class="u-center">... with CSS only</h2>
+						<h2 class="u-center">&lt;thing&gt; done with CSS only</h2>
 					</div>
 				</section>
 
 
-				<section data-background="#ffffff">
+				<section data-background-color="#349c87">
 					<a href="http://stackoverflow.com/questions/30682806/css-is-it-possible-to-achieve-this-without-an-image/30735109" target="_blank">
 						<img src="screenshots/so-poly1.png" class="screenshot" alt="">
 					</a>
@@ -70,7 +77,13 @@
 					</aside>
 				</section>
 
-				<section data-background="#ffffff">
+				<section data-background-color="#349c87">
+					<a href="http://stackoverflow.com/questions/30682806/css-is-it-possible-to-achieve-this-without-an-image/30735109" target="_blank">
+						<img src="screenshots/so-poly2.png" class="screenshot" alt="">
+					</a>
+				</section>
+
+				<section data-background-color="#f7ce31">
 					<a href="http://stackoverflow.com/questions/27874354/lemon-shape-css-and-html" target="_blank">
 						<img src="screenshots/so-lemon1.png" class="screenshot" alt="">
 					</a>
@@ -80,7 +93,7 @@
 					</aside>
 				</section>
 
-				<section data-background="#ffffff">
+				<section data-background-color="#f7ce31">
 					<a href="http://stackoverflow.com/questions/27874354/lemon-shape-css-and-html" target="_blank">
 						<img src="screenshots/so-lemon2.png" class="screenshot" alt="">
 					</a>
@@ -93,13 +106,7 @@
 					</aside>
 				</section>
 
-				<section data-background="#ffffff">
-					<a href="http://stackoverflow.com/questions/27874354/lemon-shape-css-and-html" target="_blank">
-						<img src="screenshots/so-lemon3.png" class="screenshot" alt="">
-					</a>
-				</section>
-
-				<section data-background="resources/meme-jeff-goldblum.jpeg">
+				<section data-background-color="black" data-background="resources/meme-jeff-goldblum.jpeg" data-background-size="95%">
 					<aside class="notes">
 						You were so preoccupied with whether or not you could <br>
 						you didn't stop to think if you should.
@@ -132,15 +139,19 @@
 					</div>
 				</section>
 
-				<section>
-					<h2>Agenda</h2>
-					<ul>
-						<li>Complex gradient backgrounds</li>
-						<li>Skeleton screens</li>
-						<li>Better borders</li>
-						<li>Tool components</li>
-						<!-- <li>CSS Blend Modes</li> -->
-					</ul>
+				<section data-background="#08479b">
+					<div class="flex-layout--row">
+						<div class="u-center">
+							<h1>Agenda</h1>
+							<ul class="list">
+								<li>Background shapes</li>
+								<li>Skeleton screens</li>
+								<li>Better borders</li>
+								<li>Range inputs</li>
+								<!-- <li>CSS Blend Modes</li> -->
+							</ul>
+						</div>
+					</div>
 				</section>
 
 				<section data-state="bg-gradient-intro">
@@ -154,10 +165,10 @@
 						<style class="editor-source" media="-x-fake">
 	/* CSS linear gradient */
 	.demo {
-		background-image: linear-gradient( 90deg, turquoise 0%, purple 100% );
+		background-image: linear-gradient( 120deg, turquoise 0%, rebeccapurple 100% );
 	}
 						</style>
-						<div class="cell | demo" data-layerstack></div>
+						<div class="cell | demo"></div>
 						<div class="cell cell--third | editor-container"></div>
 					</div>
 				</section>
@@ -167,10 +178,10 @@
 						<style class="editor-source" media="-x-fake">
 	/* CSS radial gradient */
 	.demo {
-		background-image: radial-gradient( circle, turquoise 0%, purple 100% );
+		background-image: radial-gradient( circle, turquoise 0%, rebeccapurple 100% );
 	}
 						</style>
-						<div class="cell | demo" data-layerstack></div>
+						<div class="cell | demo"></div>
 						<div class="cell cell--third | editor-container"></div>
 					</div>
 				</section>
@@ -269,11 +280,11 @@
 					</div>
 				</section>
 
-				<section>
+				<section data-background-color="#a22424">
 					<div class="flex-layout--row">
 						<h2 class="u-center u-width-threequarters">
 							If all you have is a hammer, <br>everything looks like a nail.
-							<small><br>-- Abraham Maslow</small>
+							<small><br>— Abraham Maslow</small>
 						</h2>
 					</div>
 				</section>
@@ -392,7 +403,7 @@
 					</a>
 				</section>
 
-				<section data-background="#ffffff">
+				<section data-background="#c8057a">
 					<div class="flex-layout--column">
 						<div class="u-center">
 							<a href="http://www.amazon.com/CSS-Secrets-Solutions-Everyday-Problems/dp/1449372635" target="_blank">
@@ -625,7 +636,7 @@
 
 				<section>
 					<div class="flex-layout--column">
-						<h1 class="u-center">Tool UI</h1>
+						<h1 class="u-center">Range inputs</h1>
 					</div>
 				</section>
 
@@ -745,22 +756,50 @@
 					</a>
 				</section> -->
 
-				<section>
-					<h1>Outro</h1>
-					<ul>
-						<li>powerful features</li>
-						<li>complex to use</li>
-						<li>specialized tooling required; DevTools</li>
-						<li>not an excuse to avoid SVG</li>
-					</ul>
+				<section data-state="bg-title">
+					<div class="flex-layout--column">
+						<div class="cell cell--vpack">
+						<h1 class="talk--title">
+							<span class="part1">CSS</span>
+							<span class="part2">for</span>
+							<span class="part3">Decoration</span>
+						</h1>
+						</div>
+					</div>
+					<aside class="notes">
+						<ul class="list">
+							<li>CSS has powerful features for decoration</li>
+							<li>They can be complex to use</li>
+							<li>specialized tooling required; DevTools</li>
+							<li>not an excuse to avoid SVG</li>
+						</ul>
+
+					</aside>
 				</section>
 
-				<section>
-					<h2>Credits</h2>
-					<p>Reveal.js: https://github.com/hakimel/reveal.js/</p>
-					<p>CodeMirror: https://github.com/codemirror/CodeMirror</p>
-					<p>Emmet for CodeMirror: https://github.com/emmetio/codemirror</p>
-					<p>border image form NASA: https://unsplash.com/@nasa</p>
+				<section data-state="bg-bio">
+					<div class="flex-layout--row">
+
+						<div class="cell cell--half cell--vpack">
+							<h1>.end { }</h1>
+						</div>
+
+						<div class="cell cell--half cell--vpack">
+							<h2 class="u-align-left">@RazvanCaliman</h2>
+							<h3 class="u-align-left" href="#">
+								Slides:
+								<a href="#">Link to slides</a>
+							</h3>
+							<h4 class="u-align-left">Credits</h4>
+							<ul>
+								<li><a href="https://github.com/hakimel/reveal.js/">Reveal.js</a></li>
+								<li><a href="https://github.com/codemirror/CodeMirror">CodeMirror</a></li>
+								<li><a href="https://github.com/emmetio/codemirror">Emmet for CodeMirror</a></li>
+								<li><a href="https://unsplash.com/@nasa">NASA image</a></li>
+								<li><a href="#">Open Sans font</a></li>
+							</ul>
+						</div>
+					</div>
 				</section>
 
 			</div>
