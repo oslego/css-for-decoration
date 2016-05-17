@@ -265,6 +265,7 @@ section.has-light-background {
 		letter-spacing: -3px;
 		padding: .2em .4em;
 		border: .2em solid rgba(0, 0, 0, 1);
+		font-weight: 700;
 
 		background-image:
 			linear-gradient(white, white),
@@ -276,7 +277,9 @@ section.has-light-background {
 		background-size:
 			100% 100%,
 			100% 100%;
+	}
 
+	.borders-title:hover {
 		// TODO: simplify animations: one for border grow/shrink + sudden color change
 		animation:
 			borders-anim1 .6s ease-in forwards,
@@ -301,7 +304,7 @@ section.has-light-background {
 		font-family: $headingFont;
 		font-size: $heading1Size;
 		text-transform: uppercase;
-		font-weight: 600;
+		font-weight: 700;
 		padding: .2em .4em;
 	}
 
