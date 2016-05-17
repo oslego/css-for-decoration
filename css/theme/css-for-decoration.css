@@ -528,7 +528,14 @@ html.bg-gradient-intro .slide-background.present {
 html.bg-bio .slide-background.present {
   background-image: url(../../resources/adobelogo.svg), linear-gradient(110deg, rebeccapurple 40%, #402060 0);
   background-size: 2em auto, 100% 100%;
+  transition: none;
   background-position: top right 2em, center center;
+  background-repeat: no-repeat; }
+
+html.bg-purple-slant .slide-background.present {
+  background-image: linear-gradient(110deg, rebeccapurple 40%, #402060 0);
+  background-size: 100% 100%;
+  background-position: center center;
   background-repeat: no-repeat; }
 
 html.bg-skeleton .slide-background.present {
@@ -537,7 +544,7 @@ html.bg-skeleton .slide-background.present {
   background-repeat: repeat; }
 
 html.bg-title .slide-background.present {
-  background-image: linear-gradient(110deg, rebeccapurple 50%, #402060 0); }
+  background-color: rebeccapurple; }
 
 .reveal .avatar {
   border: none;
