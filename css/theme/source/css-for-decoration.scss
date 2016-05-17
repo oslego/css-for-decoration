@@ -33,6 +33,7 @@ $linkColor: #42affa;
 $linkColorHover: lighten( $linkColor, 15% );
 $selectionBackgroundColor: lighten( $linkColor, 25% );
 
+$titleSize: 4em;
 $heading1Size: 3.5em;
 $heading2Size: 2.5em;
 $heading3Size: 1.3em;
@@ -198,7 +199,7 @@ section.has-light-background {
 	.fragment--trigger-highlight.visible {
 		.highlight {
 			transition: all .5s;
-			background-color: #FDD835;
+			background-color: #f7ce31;
 			color: black;
 		}
 
@@ -338,6 +339,44 @@ section.has-light-background {
 		}
 	}
 
+	.talk--title {
+		display: flex;
+		flex-flow: column;
+		font-size: $titleSize;
+		line-height: 0.2;
+		font-weight: 900;
+
+		span {
+			flex: 0;
+			align-self: center;
+		}
+
+		.part2 {
+			font-weight: 300;
+			font-style: italic;
+			font-size: 0.8em;
+			color: rgba(255, 255, 255, 0.7);
+		}
+
+		$contrast: #f7ce31;
+		$contrast2: darken(rebeccapurple, 10%);
+		$contrast3: lighten(rebeccapurple, 15%);
+		$contrast3: darken(rebeccapurple, 25%);
+
+		.part3,
+		.part1 {
+			padding: 1.2em .6em;
+			color: black;
+			background-image:
+				linear-gradient(177deg, transparent 25%, $contrast 25.5%, $contrast 75%, transparent 75.5%),
+				linear-gradient(177deg, transparent 25%, $contrast2 25.5%, $contrast2 75%, transparent 75.5%),
+				linear-gradient(-179deg, transparent 25%, $contrast3 25.5%, $contrast3 75%, transparent 75.5%);
+			background-size: auto 94%, auto 95%;
+			background-position: center center, right -20px bottom -20px, top -10px left;
+			background-repeat: no-repeat;
+		}
+	}
+
 }
 
 @keyframes borders-anim1 {
@@ -421,14 +460,26 @@ html.bg-gradient-intro {
 
 html.bg-bio {
 	.slide-background.present {
-		background-image: url(../../resources/adobelogo.svg);
+		// background-color: rebeccapurple;
+		background-image:
+			url(../../resources/adobelogo.svg),
+			linear-gradient( 110deg, rebeccapurple 40%, darken(rebeccapurple, 15%) 0);
 
 		background-size:
-			2em auto;
+			2em auto,
+			100% 100%;
 
-		background-position: top right 2em;
+		background-position:
+			top right 2em,
+			center center;
 
 		background-repeat: no-repeat;
+	}
+}
+
+html.bg-title {
+	.slide-background.present {
+		background-image: linear-gradient( 110deg, rebeccapurple 50%, darken(rebeccapurple, 15%) 0);
 	}
 }
 

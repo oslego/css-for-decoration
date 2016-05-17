@@ -383,7 +383,7 @@ body {
 
 .reveal .fragment--trigger-highlight.visible .highlight {
   transition: all .5s;
-  background-color: #FDD835;
+  background-color: #f7ce31;
   color: black; }
 
 .reveal .fragment--trigger-highlight.visible :not(.highlight) {
@@ -470,6 +470,29 @@ body {
     -webkit-appearance: none;
     appearance: none; }
 
+.reveal .talk--title {
+  display: flex;
+  flex-flow: column;
+  font-size: 4em;
+  line-height: 0.2;
+  font-weight: 900; }
+  .reveal .talk--title span {
+    flex: 0;
+    align-self: center; }
+  .reveal .talk--title .part2 {
+    font-weight: 300;
+    font-style: italic;
+    font-size: 0.8em;
+    color: rgba(255, 255, 255, 0.7); }
+  .reveal .talk--title .part3,
+  .reveal .talk--title .part1 {
+    padding: 1.2em .6em;
+    color: black;
+    background-image: linear-gradient(177deg, transparent 25%, #f7ce31 25.5%, #f7ce31 75%, transparent 75.5%), linear-gradient(177deg, transparent 25%, #4d2673 25.5%, #4d2673 75%, transparent 75.5%), linear-gradient(-179deg, transparent 25%, #261339 25.5%, #261339 75%, transparent 75.5%);
+    background-size: auto 94%, auto 95%;
+    background-position: center center, right -20px bottom -20px, top -10px left;
+    background-repeat: no-repeat; }
+
 @keyframes borders-anim1 {
   to {
     border-width: 0; } }
@@ -512,10 +535,13 @@ html.bg-gradient-intro .slide-background.present {
   background: linear-gradient(340deg, #00D7B9, #B95DD7 40%, #FFB367 90%); }
 
 html.bg-bio .slide-background.present {
-  background-image: url(../../resources/adobelogo.svg);
-  background-size: 2em auto;
-  background-position: top right 2em;
+  background-image: url(../../resources/adobelogo.svg), linear-gradient(110deg, rebeccapurple 40%, #402060 0);
+  background-size: 2em auto, 100% 100%;
+  background-position: top right 2em, center center;
   background-repeat: no-repeat; }
+
+html.bg-title .slide-background.present {
+  background-image: linear-gradient(110deg, rebeccapurple 50%, #402060 0); }
 
 .reveal .avatar {
   border: none;
