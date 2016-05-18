@@ -418,6 +418,9 @@ body {
   .reveal ul.list li {
     padding: 0.1em .3em; }
 
+.reveal ul.list--credits {
+  font-size: 0.75em; }
+
 .reveal cite {
   font-size: 1.2rem;
   opacity: 0.5; }
