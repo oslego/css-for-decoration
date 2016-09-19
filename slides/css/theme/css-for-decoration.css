@@ -509,6 +509,12 @@ body {
   margin: auto;
   width: 500px;
   outline: none; }
+  .reveal .demo--input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    background: rgba(0, 0, 0, 0.5);
+    width: 16px;
+    height: 4em; }
 
 .reveal .demo--wizzard {
   margin: auto;

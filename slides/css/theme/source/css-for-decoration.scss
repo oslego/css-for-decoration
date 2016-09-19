@@ -389,6 +389,14 @@ section.has-light-background {
 		margin: auto;
 		width: 500px;
 		outline: none;
+
+		&::-webkit-slider-thumb {
+			-webkit-appearance: none;
+			appearance: none;
+			background: rgba(0, 0, 0, 0.5);
+			width: 16px;
+			height: 4em;
+		}
 	}
 
 	.demo--wizzard {
