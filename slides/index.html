@@ -458,7 +458,6 @@
 			linear-gradient( lightgray 20px, transparent 0 );
 
 		background-repeat: repeat-y;
-		/*background-repeat: no-repeat;*/
 
 		background-size:
 			100px 200px, /* circle */
@@ -476,6 +475,7 @@
 	}
 						</style>
 						<div class="cell | demo-container--skeleton" >
+							<button class="demo--skeleton__trigger">Toggle content</button>
 							<div class="demo demo--skeleton"></div>
 						</div>
 						<div class="cell cell--half | editor-container"></div>
@@ -539,6 +539,7 @@
 	}
 						</style>
 						<div class="cell | demo-container--skeleton" >
+							<button class="demo--skeleton__trigger">Toggle content</button>
 							<div class="demo demo--skeleton"></div>
 						</div>
 						<div class="cell cell--half | editor-container"></div>
@@ -684,7 +685,7 @@
 				<section>
 					<div class="flex-layout--column">
 						<style class="editor-source" media="-x-fake">
-	/* "Wizzard input" inspired by Ana Tudor aka @thebabydino */
+	/* "Wizzard input" inspired by Ana Tudor, @thebabydino on CodePen */
 	/* <input type="range" class="demo" min=0 max=2 step=1 value=1 > */
 
 	.demo {
@@ -963,9 +964,32 @@
 				}
 			}
 
+			// Toggle DOM content in the containers with skeleton screens
+			function bootstrapSkeletonToggle() {
+				var triggers = Array.from(document.querySelectorAll('.demo--skeleton__trigger'));
+				var template = `<div class="mock">
+					<img class="mock__image" src="resources/avatar.jpg" alt="">
+					<div class="mock__text">
+						<p>Injected content invalidates the <code>:empty</code> pseudo-class selector so the background skeleton screen disappears.</p>
+					</div>
+				</div>`;
+
+				triggers.forEach(function(trigger) {
+					trigger.addEventListener('click', function() {
+						var container = trigger.parentNode.querySelector('.demo--skeleton');
+						container.innerHTML = (container.childNodes.length) ? '' : template + template + template;
+					})
+				})
+			}
+
+			function init() {
+				bootstrapLayerStack()
+				bootstrapSkeletonToggle()
+			}
+
 			Reveal.addEventListener('slidechanged', toggleEditorsOnSlideChange);
 			Reveal.addEventListener('slidechanged', destroyLayerStackOnSlideChange);
-			Reveal.addEventListener('ready', bootstrapLayerStack);
+			Reveal.addEventListener('ready', init);
 
 			// More info https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({

@@ -429,12 +429,48 @@ body {
   background: white;
   display: flex; }
 
+.reveal .demo--skeleton__trigger {
+  position: absolute;
+  top: 2em;
+  right: 2em;
+  background: none;
+  border: none;
+  color: #eee;
+  font-size: .5em;
+  padding: .2em .7em;
+  border: 3px solid currentColor;
+  outline: none; }
+  .reveal .demo--skeleton__trigger:hover {
+    color: #666;
+    cursor: pointer; }
+
 .reveal .demo.demo--skeleton {
   margin: auto;
   width: 500px;
   height: 200px;
   overflow: hidden;
   resize: vertical; }
+  .reveal .demo.demo--skeleton .mock {
+    display: flex;
+    height: 200px; }
+  .reveal .demo.demo--skeleton .mock__image {
+    width: 100px;
+    height: 100px;
+    background: transparent;
+    flex: 0 0 100px;
+    margin: 0;
+    border: none;
+    border-radius: 50%; }
+  .reveal .demo.demo--skeleton .mock__text {
+    margin-left: 20px; }
+    .reveal .demo.demo--skeleton .mock__text p {
+      margin: 0;
+      color: #444;
+      font-size: 20px;
+      text-align: left;
+      line-height: 40px; }
+      .reveal .demo.demo--skeleton .mock__text p:first-of-type {
+        margin-top: -10px; }
 
 .reveal .borders-title {
   font-size: 4em;
